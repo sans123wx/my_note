@@ -1,0 +1,26 @@
+1.首先，要确保CentOS7安装了openssh-server，在终端中输入  yum list installed | grep openssh-server
+如果又没任何输出显示表示没有安装openssh-server，通过输入  yum install openssh-server
+2.找到了  /etc/ssh/  目录下的sshd服务配置文件 sshd_config，用Vim编辑器打开
+port 22
+listenaddress 0.0.0.0
+listenaddress : :
+permitrootlogin yes
+passwordauthentication yes
+3.开始sshd服务，service ssjd start
+检查  sshd  服务是否已经开启，输入ps -e | grep sshd
+
+为了免去每次开启 CentOS 时，都要手动开启  sshd 服务，可以将 sshd 服务添加至自启动列表中，输入systemctl enable sshd.service
+
+设置ssh长时间不掉线
+#ClientAliveInterval 0
+
+#ClientAliveCountMax 3
+
+
+
+改为：
+
+
+ClientAliveInterval 60
+
+ClientAliveCountMax 60

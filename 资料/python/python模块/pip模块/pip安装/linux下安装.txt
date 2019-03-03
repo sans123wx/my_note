@@ -1,0 +1,7 @@
+ubuntu
+安装pip3
+先安装setuptools才能安装pip
+apt install python3-setuptools
+
+再安装pip
+apt install python3-pip

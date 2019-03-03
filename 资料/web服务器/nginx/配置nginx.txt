@@ -1,0 +1,25 @@
+在sites-available文件夹中，删除掉默认页面default
+新建mysite_nginx.conf配置文件
+server{
+	listen 80;监听端口号
+	server_name mysite;服务器名称，自定义
+	charset utf-8;使用字符集
+	client_max_body_size 75M;最大提交问价大小
+	location /static {
+		alias /home/django_learnings/static;
+	} 处理静态文件，路径指向项目静态文件
+	location /media {
+		alias /home/django_learnings/meida;
+	} 处理媒体文件，路径指向项目媒体文件
+	location / {
+		uwsgi_pass 127.0.0.1:8001;
+		include /etc/nginx/uwsgi_params;
+	} 处理其他所有请求，通过8001端口给uwsgi处理
+
+}
+
+配置完成后，将配置文件做一个软连接到sites-enabled中才能生效
+ln -s /etc/nginx/sites-available/mystie_nginx.conf /etc/nginx/sites-enabled/mystie_nginx.conf
+
+重启服务
+service nginx restart

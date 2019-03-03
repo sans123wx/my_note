@@ -1,0 +1,2 @@
+{%load staticfiles%}
+<link rel="stylesheet" href="{%static 'note/bower_components/font-awesome/css/font-awesome.min.css'%}">

@@ -1,0 +1,6 @@
+ubuntu
+安装软件库和源
+apt install software-properties-common
+add-apt-repository ppa:jonathonf|python3.6
+apt update
+apt install python3.6

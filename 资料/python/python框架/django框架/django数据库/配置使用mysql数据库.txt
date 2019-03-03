@@ -1,0 +1,13 @@
+在settings中设置mysql数据库
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'django_learnings_db',
+        'USER': '用户名',
+        'PASSWORD': '密码',
+        'HOST': 'localhost',
+        'PORT': '3306',
+    }
+}
+通常使用3306端口
+必须安装python模块mysqlclient才能使用mysql数据库

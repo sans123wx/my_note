@@ -1,0 +1,9 @@
+通过OneToOneField关联User的方式
+总结：由于一个实例对应一个User，可以用User反向使用实例字段，实现增加User字段
+
+1.建立一个模型，用OneToOneField关联User
+class Profile(models.Model):
+	user = models.OneToOneField(User , on_delete = models.CASCADE)
+	nickname = models.CharField(max_length=20)
+2.修改数据库
+3使用内联的方式在后台的User中显示

@@ -1,0 +1,4 @@
+from django.contrib import auth
+
+user = auth.authenticate(username = 用户名 , password = 密码)验证用户
+auth.login(request , user) 登陆用户

@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>绘制十字</title>
+<style>
+	#myc{
+		border: 1px solid #000000;
+		display:block;
+		margin: auto;
+	}
+	</style>
+</head>
+
+<body>
+	<canvas id="myc"></canvas>
+	<script>
+		var c=document.getElementById("myc");
+		c.width=600;
+		c.height=400;
+		var ctx=c.getContext("2d");
+		var x=20,y=50,w=80;
+		ctx.moveTo(x,y);
+		ctx.lineTo(x+w,y);
+		ctx.lineWidth=5;
+		ctx.strokeStyle="red";
+		ctx.stroke();
+		ctx.beginPath();
+		ctx.moveTo(x+w/2,y-w/2);
+		ctx.lineTo(x+w/2,y+w/2);
+		ctx.stroke();
+		
+	</script>
+</body>
+</html>

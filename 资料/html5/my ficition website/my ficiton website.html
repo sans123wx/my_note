@@ -1,0 +1,591 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>my ficition website</title>
+<style>
+	body{
+		margin: 0;
+		padding: 0;
+	}
+	*{white-space: nowrap}
+	nav{white-space: nowrap}
+	nav{
+		background-color: #F7F7F7;
+		text-align: center;
+		padding: 0;
+		margin: 0;
+
+	}
+	nav div{
+		width: 78%;
+		height: 35px;
+		margin: auto;
+		overflow: hidden;
+	}
+	nav ul{
+		list-style: none;
+		padding: 0;	
+		margin: 0;
+	}
+	nav #nav-link{
+		float: left;	
+	}
+	nav #login-box{
+		float:right;
+	}
+	nav li{
+		display: inline-block;
+		margin-top: 7px;		
+	}
+	nav li:not(:last-child){
+		border-right: 1px solid #eae3e1;
+	}
+	nav #nav-link li{
+		padding-right: 30px
+	}
+	nav #login-box li{
+		padding-right: 13px
+	}
+	div.num_2{
+		width: 78%;
+		height: 150px;
+		margin: auto;
+		overflow: hidden;
+	}
+	div.num_2 div img{
+		width: 100px;
+		margin: 0;
+		padding: 0;
+	}
+	div.num_2 div{
+		float:left
+	}
+	div.num_2 div.search-box{
+		margin-left: 300px;
+		margin-top: 50px;
+		margin-right: 300px
+	}
+	div.num_2 div.search-box input{
+		width: 330px;
+		height: 35px;
+	}
+	div.num_2 div.shujia{
+		margin-top: 50px;
+	}
+	div.fenlei{
+		background-color: #3e3d43;
+		margin: 0;
+		padding: 0;
+	}
+	div.fenlei div{
+		width:78%;
+		margin: auto;
+			
+	}
+	div.fenlei ul{
+		list-style: none;
+		display:inline-block;
+		margin: 0;
+		padding: 0;
+		margin-right: 120px;
+	}
+	div.fenlei li{
+		display:inline-block;
+		color: #FFFFFF;
+		margin: 0;
+		padding: 10px;
+		margin-right: 23px
+	}
+	div.zanshi{
+		width: 78%;
+		margin: auto;
+		overflow: hidden;
+	}
+	div.zanshi table{
+		border: 1px solid #000000;
+		border-top: none;
+	}
+	div.zanshi td{
+		width: 100px;
+		height: 45px;
+		text-align: center
+	}
+	div.zanshi #zanshi_fenlei{
+		width: 20%;
+		float: left;
+	}
+	div.zanshi img{
+		display: block;
+	}
+	div.zanshi #zanshi_tupian{
+		width: 59%;
+		height: 340px;
+		overflow: hidden;
+		float: left;
+		text-align: center;
+	}
+	div.zanshi #zanshi_huodong{
+		width: 20%;
+		float: right;
+		border: 1px solid #000000;
+		border-top: none;
+		height: 340px;
+	}
+	div.zanshi ul{
+		list-style: none;
+		line-height: 26px;
+		margin-left: 10px;
+		margin-top: 2px
+	}
+	div.guanggao{
+		width: 78%;
+		margin: auto;
+		height: 100px;
+		overflow: hidden;
+		margin-top: 20px;
+	}
+	div.paihang{
+		width: 78%;
+		margin: auto;
+		overflow: hidden;
+	}
+	div.paihang ul{
+		list-style: none;
+	}
+	div.paihang ul.paihang_ul{
+		padding: 0;
+	}
+	div.paihang ul.paihang_ul li.paihang_li{
+		display: inline-block;
+		width: 230px;
+	}
+	div.paihang ul.paihang_ul li.paihang_li span{
+		width: 200px;
+		padding-bottom: 5px;
+		font-size: 18px;
+		border-bottom: 1px solid #000000;
+		display: block;
+	}
+	div.paihang ul.paihang_ul li.paihang_li ul{
+		padding: 0;
+		line-height: 35px
+	}
+	div.paihang ul.paihang_ul li.paihang_li ul li{
+		width: 200px;
+		border-bottom: 1px dashed #C4C4C4;
+	}
+	div.guanggao_2{
+		text-align: center;
+		height: 300px;
+		overflow: hidden;
+		margin-bottom: 40px
+	}
+	div.guanggao_2 img{
+		width: 78%;
+	}
+	div.rmzp{
+		overflow: hidden
+	}
+	div.rmzp ul.rmzp_ul{
+		width: 78%;
+		margin: auto;
+		list-style: none;
+		padding: 0;
+	}
+	div.rmzp li.rmzp_li1{
+		width: 20%;
+		float: left;
+	}
+	div.rmzp li.rmzp_li1 span{
+		width: 100%;
+		display: block;
+		text-align: center
+	}
+	div.rmzp li.rmzp_li1 img{
+		display: block;
+		width: 100%;
+	}
+	div.rmzp ul.rmzp_li2{
+		width: 80%;
+		overflow: hidden;
+		float: right;
+	}
+	div.rmzp ul.rmzp_ul2{
+		list-style: none;
+		padding: 0;
+		float: left;
+		width: 20%;
+		height: 185px;
+		text-align: right;
+		line-height: 20px;
+		overflow: hidden
+		
+	}
+
+	div.rmzp ul.rmzp_ul2 img{
+		display: block;
+		width: 90%;
+		margin-left: 30px
+
+	}
+	div.rmzp ul.rmzp_ul2 span{
+		font-size: 18px;
+		border-bottom: 1px solid #000000;
+	}
+	div.rmzp ul.rmzp_ul2 li{
+		margin-top: 3px
+	}
+	div.xstj{
+		margin-top: 50px;
+		overflow: hidden;
+	}
+	div.xstj ul.xstj_ul1{
+		width: 78%;
+		margin: auto;
+		list-style: none;
+	}
+	div.xstj li.xstj_li1_1{
+		width: 78%;
+		float:left;
+	}
+	div.xstj li.xstj_li1_2 {
+		width: 19%;
+		float:right;
+		margin-left: 9px
+	}
+	div.xstj li.xstj_li1_1 ul{
+		list-style: none;
+		padding: 0;
+	}
+	div.xstj span.xstj_title{
+		display: block;
+		width: 100%;
+		border-bottom: 1px solid #000000;
+	}
+	div.xstj li.xstj_li2_1_img{
+		width: 20%;
+		float: left;
+	}
+	div.xstj li.xstj_li2_1_img img{
+		display: block;
+		width: 100%;
+	}
+	div.xstj li.xstj_li2_1_2{
+		width: 79%;
+		float:right;
+	}
+	div.xstj li.xstj_li2_1_2 ul>li{
+		width: 50%;
+		float:left;
+		overflow: hidden;
+		height: 92px;
+		border-bottom: 1px solid #D3D3D3;
+	}
+	div.xstj li.xstj_li2_1_2 ul>li img{
+		display: block;
+		width: 100%;
+	}
+	div.xstj ul.xstj_ul2_2{
+		list-style: none;
+		line-height: 28px
+	}
+	</style>
+</head>
+
+<body>
+<nav>
+<div>
+	<ul id="nav-link">
+		<li>分支1</li>
+		<li>分支2</li>
+		<li>分支3</li>
+		<li>分支4</li>
+		<li>分支5</li>
+	</ul>
+	<ul id="login-box">
+		<li>登录</li>
+		<li>注册</li>
+	</ul>
+</div>
+</nav>
+<div class="num_2">
+	<div><img src="4.jpg" alt=""></div>
+	<div class="search-box"><input type="text" id="search"><lable for="search">搜索</lable></div>
+	<div class="shujia">我的书架</div>
+</div>
+<div class="fenlei">
+	<div>
+		<ul id="fenlei_ul1">
+		<li>作品分类</li>
+		</ul>
+		<ul id="fenlei_ul2">
+		<li>全部作品</li>
+		<li>排行</li>
+		<li>完本</li>
+		<li>免费</li>
+		<li>作家专区</li>
+		<li>客户端</li>
+		</ul>
+		<ul id="fenlei_ul3">
+		<li>页面</li>
+		<li>手游</li>
+		</ul>
+	</div>
+</div>
+<div class="zanshi">
+	<div id="zanshi_fenlei">
+		<table>
+			<tr>
+				<td>玄幻</td>
+				<td>奇幻</td>
+			</tr>
+			<tr>
+				<td>武侠</td>
+				<td>仙侠</td>
+			</tr>
+			<tr>
+				<td>都市</td>
+				<td>现实</td>
+			</tr>
+			<tr>
+				<td>军事</td>
+				<td>历史</td>
+			</tr>
+			<tr>
+				<td>游戏</td>
+				<td>体育</td>
+			</tr>
+			<tr>
+				<td>科幻</td>
+				<td>灵异</td>
+			</tr>
+			<tr>
+				<td>女生网</td>
+				<td>二次元</td>
+			</tr>
+		</table>
+	</div>
+	<div id="zanshi_tupian"><img src="1.jpg" alt=""></div>
+	<div id="zanshi_huodong">
+	<ul>
+		<li>活动内容</li>
+		<li>活动内容</li>
+		<li>活动内容</li>
+		<li>活动内容</li>
+		<li>活动内容</li>
+		<li>活动内容</li>
+		<li>活动内容</li>
+		<li>活动内容</li>
+		<li>活动内容</li>
+		<li>活动内容</li>
+		<li>活动内容</li>
+		<li>活动内容</li>
+		<li>活动内容</li>
+	</ul></div>
+</div>
+<div class="guanggao"><img src="7.jpg" alt=""></div>
+<div class="paihang">
+	<ul class="paihang_ul">
+		<li class="paihang_li">
+			<span>原创风云榜·新书</span>
+			<ul>
+				<li>小说名称名字</li>
+				<li>小说名称名字</li>
+				<li>小说名称名字</li>
+				<li>小说名称名字</li>
+				<li>小说名称名字</li>
+				<li>小说名称名字</li>
+				<li>小说名称名字</li>
+				<li>小说名称名字</li>
+				<li>小说名称名字</li>
+				<li>小说名称名字</li>
+			</ul>
+		</li>
+		<li class="paihang_li">
+			<span>24小时热销榜</span>
+			<ul>
+				<li>小说名称名字</li>
+				<li>小说名称名字</li>
+				<li>小说名称名字</li>
+				<li>小说名称名字</li>
+				<li>小说名称名字</li>
+				<li>小说名称名字</li>
+				<li>小说名称名字</li>
+				<li>小说名称名字</li>
+				<li>小说名称名字</li>
+				<li>小说名称名字</li>
+			</ul>
+		</li>
+		<li class="paihang_li">
+			<span>新锐会员周点击榜</span>
+			<ul>
+				<li>小说名称名字</li>
+				<li>小说名称名字</li>
+				<li>小说名称名字</li>
+				<li>小说名称名字</li>
+				<li>小说名称名字</li>
+				<li>小说名称名字</li>
+				<li>小说名称名字</li>
+				<li>小说名称名字</li>
+				<li>小说名称名字</li>
+				<li>小说名称名字</li>
+			</ul>
+		</li>
+		<li class="paihang_li">
+			<span>周推荐票榜</span>
+			<ul>
+				<li>小说名称名字</li>
+				<li>小说名称名字</li>
+				<li>小说名称名字</li>
+				<li>小说名称名字</li>
+				<li>小说名称名字</li>
+				<li>小说名称名字</li>
+				<li>小说名称名字</li>
+				<li>小说名称名字</li>
+				<li>小说名称名字</li>
+				<li>小说名称名字</li>
+			</ul>
+		</li>
+		<li class="paihang_li">
+			<span>签约作家新书榜</span>
+			<ul>
+				<li>小说名称名字</li>
+				<li>小说名称名字</li>
+				<li>小说名称名字</li>
+				<li>小说名称名字</li>
+				<li>小说名称名字</li>
+				<li>小说名称名字</li>
+				<li>小说名称名字</li>
+				<li>小说名称名字</li>
+				<li>小说名称名字</li>
+				<li>小说名称名字</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+<div class="guanggao_2"><img src="8.jpg" alt=""></div>
+<div class="rmzp">
+	<ul class="rmzp_ul">
+		<li class="rmzp_li1"><span>热门作品</span><img src="2.jpg" alt=""></li>
+		<li class="rmzp_li2"><ul class="rmzp_ul2">
+			<span>玄幻·奇幻.....</span>
+			<li>小说名称名字.....</li>
+			<li>小说名称名字.....</li>
+			<li>小说名称名字.....</li>
+			<li>小说名称名字.....</li>
+			<li>小说名称名字.....</li>
+		</ul>
+		<ul class="rmzp_ul2">
+			<span>武侠·仙侠.....</span>
+			<li>小说名称名字.....</li>
+			<li>小说名称名字.....</li>
+			<li>小说名称名字.....</li>
+			<li>小说名称名字.....</li>
+			<li>小说名称名字.....</li>
+		</ul>
+		<ul class="rmzp_ul2">
+			<span>都市·现实.....</span>
+			<li>小说名称名字.....</li>
+			<li>小说名称名字.....</li>
+			<li>小说名称名字.....</li>
+			<li>小说名称名字.....</li>
+			<li>小说名称名字.....</li>
+		</ul>
+		<ul class="rmzp_ul2">
+			<span>历史·军事.....</span>
+			<li>小说名称名字.....</li>
+			<li>小说名称名字.....</li>
+			<li>小说名称名字.....</li>
+			<li>小说名称名字.....</li>
+			<li>小说名称名字.....</li>
+		</ul>
+		<ul class="rmzp_ul2 rmzp_img">
+			<span>游戏·体育.....</span>
+			<li>小说名称名字.....</li>
+			<li>小说名称名字.....</li>
+			<li>小说名称名字.....</li>
+			<li>小说名称名字.....</li>
+			<li>小说名称名字.....</li>
+		</ul>
+		<ul class="rmzp_ul2 rmzp_img">
+			<span>科幻·灵异.....</span>
+			<li>小说名称名字.....</li>
+			<li>小说名称名字.....</li>
+			<li>小说名称名字.....</li>
+			<li>小说名称名字.....</li>
+			<li>小说名称名字.....</li>
+		</ul>
+		<ul class="rmzp_ul2 rmzp_img">
+			<span>二次元.....</span>
+			<li>小说名称名字.....</li>
+			<li>小说名称名字.....</li>
+			<li>小说名称名字.....</li>
+			<li>小说名称名字.....</li>
+			<li>小说名称名字.....</li>
+		</ul>
+		<ul class="rmzp_ul2 rmzp_img"><img src="3.jpg" alt=""></ul>
+		</li>
+
+	</ul>
+</div>
+<div class="xstj">
+	<ul class="xstj_ul1">
+		<li class="xstj_li1_1">
+			<span class="xstj_title">新书推荐</span>
+			<ul class="xstj_ul2">
+				<li class="xstj_li2_1_img"><img src="5.jpg" alt=""></li>
+				<li class="xstj_li2_1_2"><ul>
+					<li><ul>
+						<li><img src="6.jpg" alt=""></li>
+						<span>小说名称名字</span>
+						<li>小说简介。。。。。。。</li>
+					</ul></li>
+					<li><ul>
+						<li><img src="10.jpg" alt=""></li>
+						<span>小说名称</span>
+						<li>小说简介</li>
+					</ul></li>
+					<li><ul>
+						<li><img src="11.jpg" alt=""></li>
+						<span>小说名称</span>
+						<li>小说简介</li>
+					</ul></li>
+					<li><ul>
+						<li><img src="12.jpg" alt=""></li>
+						<span>小说名称</span>
+						<li>小说简介</li>
+					</ul></li>
+					<li><ul>
+						<li><img src="15.jpg" alt=""></li>
+						<span>小说名称</span>
+						<li>小说简介</li>
+					</ul></li>
+					<li><ul>
+						<li><img src="13.jpg" alt=""></li>
+						<span>小说名称</span>
+						<li>小说简介</li>
+					</ul></li>
+				</ul>
+				</li>
+			</ul>
+		</li>
+		<li class="xstj_li1_2">
+			<span class="xstj_title">新人·签约新书榜</span>
+			<ul class="xstj_ul2_2">
+				<li>小说名称，排行。。。</li>
+				<li>小说名称，排行。。。</li>
+				<li>小说名称，排行。。。</li>
+				<li>小说名称，排行。。。</li>
+				<li>小说名称，排行。。。</li>
+				<li>小说名称，排行。。。</li>
+				<li>小说名称，排行。。。</li>
+				<li>小说名称，排行。。。</li>
+				<li>小说名称，排行。。。</li>
+				<li>小说名称，排行。。。</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+</body>
+</html>

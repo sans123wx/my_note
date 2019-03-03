@@ -1,0 +1,7 @@
+windows下
+由于windows直接pip安装会报错，使用编译好二进制文件.whl安装
+地址：https://www.lfd.uci.edu/~gohlke/pythonlibs/#mysqlclient
+选择合适版本
+
+使用pip安装
+pip install 文件路径

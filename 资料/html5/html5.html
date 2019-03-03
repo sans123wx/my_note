@@ -1,0 +1,72 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>html5学习笔记</title>
+<style type = "text/css">
+	body{font:15px/1.5 Helvetica Neue,Helvetica,Arial,Microsoft YaHei,Hiragino Sans GB,Heiti SC,WenQuanYi Micro Hei," sans-serif";}
+</style>
+</head>
+
+<body>
+<article>
+	<header><h1>html5学习笔记</h1></header>
+	<section>
+	<h2>概念</h2>
+	<p>html标签：布局网页的结构<br>
+		空标签：只有标枪，没有内容<br>
+		自闭和标签：空标签可以这样表示<br>
+		虚标签：两种表示方法：
+	</p>
+	</section>
+	
+	<section>
+	<h2>属性</h2>
+	<p>标签属性：只能用在开始标签或单个标签上<br>
+	标签属性分为全局属性，私有属性，属性与属性之间用空格隔开<br>
+	以data-开头的叫自定义属性或者扩展属性
+	</p>
+	</section>
+	
+	<section>
+	<h2>元素关系</h2>
+	<p>&lt;!doctype html&gt;<br>
+&lt;html&gt;<br>
+&lt;head&gt;<br>
+	&lt;title&gt;标题&lt;/title&gt;<br>
+&lt;/head&gt;<br>
+
+&lt;body&gt;<br>
+	&lt;code&gt;内容&lt;/code&gt;<br>
+&lt;/body&gt;<br>
+&lt;/html&gt;<br>
+html是head的父元素<br>
+head是html的子元素<br>
+html与body是兄弟元素<br>
+title是html的后代元素
+
+</p>
+	</section>
+	
+	<section>
+	<h2>css属性</h2>
+	<p>
+css属性：设置内容的样式<br>
+几种使用css的方法<br>
+1.	用属性：style直接在元素上定义，style = ‘background-color:grey;color:white’<br>
+2.	使用标签&lt;style&gt;：一般在head中使用<br>
+&lt;style type = ‘text/css’&gt;<br>
+a{background-color:grey;<br>
+   color:white}<br>
+&lt;/style&gt;<br>
+3.	使用外部样式表，用link元素导入<br>
+&lt;link rel = ‘stylesheet’ type = ‘text/css’ href = ‘style.css’&gt;<br>
+后面导入的样式会覆盖前面的，如果使用！important，则优先使用！importtant标记的属性<br>
+color:black !important<br>
+！important&gt;属性style&gt;元素style&gt;link元素<br>
+
+	</p>
+	</section>
+</article>			
+</body>
+</html>

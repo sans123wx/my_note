@@ -1,0 +1,26 @@
+ubuntu
+由于mysqlclient依赖一些包，先要安装这些包才能安装mysqlclient
+
+
+安装libmysqlclient-dev
+官网下载apt源
+https://dev.mysql.com/downloads/mysql/
+选择版本，用wget下载
+
+添加软件源
+dpkg -i 软件源 
+更新软件源
+apt update
+安装libmysqlclient-dev
+apt install libmysqlclient-dev
+
+
+安装python3.6-dev（指定python版本）
+apt install python3.6-dev
+
+
+安装libssl-dev
+apt install libssl-dev
+
+安装mysqlclient
+pip install mysqlclient

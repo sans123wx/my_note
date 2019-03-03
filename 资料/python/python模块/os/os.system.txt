@@ -1,0 +1,2 @@
+os.system('cmd')为阻塞模式，程序会等待cmd结束，并会关闭cmd窗口
+os.system('start cmd')为非阻塞模式，程序不会等待cmd结束，也不会关闭cmd窗口

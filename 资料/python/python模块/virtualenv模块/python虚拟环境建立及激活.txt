@@ -1,0 +1,20 @@
+windows下
+在cmd进入文件夹目录中
+执行：python -m venv 环境名
+建立虚拟环境
+
+激活环境
+在cmd进入文件夹目录中
+执行：环境名\Scripts\activate
+环境激活
+
+注：环境激活时，目录文件夹旁会有环境名在括号内显示
+
+linux下
+建立虚拟环境
+执行：virtualenv 环境名
+
+激活环境
+source activate文件路径
+
+注：环境激活时，目录文件夹旁会有环境名在括号内显示

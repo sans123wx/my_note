@@ -1,0 +1,6 @@
+window下
+安装mysql服务
+mysqld --install
+
+启动mysql服务
+net start mysql（windows命令）

@@ -1,0 +1,2 @@
+ubuntu
+pip install uwsgi

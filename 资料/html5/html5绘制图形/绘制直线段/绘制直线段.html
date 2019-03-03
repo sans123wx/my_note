@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>绘制直线段</title>
+<style>
+	#myc{
+		width: 600px;
+		height: 400px;
+		border: 1px solid #000000;
+		display:block;
+		margin: auto;
+	}
+	</style>
+</head>
+
+<body>
+	<canvas id="myc"></canvas>
+	<script>
+		var c=document.getElementById("myc");
+		var ctx=c.getContext("2d")
+		ctx.moveTo(60,10);
+		ctx.lineTo(60,10+50);
+		ctx.lineWidth=20;
+		ctx.strokeStyle="red";
+		ctx.lineCap="round";
+		ctx.stroke();
+		
+		ctx.beginPath();
+		ctx.moveTo(120,10);
+		ctx.lineTo(120,10+50);
+		ctx.lineWidth=20;
+		ctx.strokeStyle="rgba(100%,30%,70%,0.8)";
+		ctx.lineCap="square";
+		ctx.stroke();
+	
+	</script>
+</body>
+</html>

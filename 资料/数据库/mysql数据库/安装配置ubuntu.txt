@@ -1,0 +1,8 @@
+ubuntu
+在官网下载apt软件源
+地址:wget https://dev.mysql.com/downloads/repo/apt/
+
+添加软件源
+dpkg -i 下载的软件源（选择版本）
+apt update
+apt install mysql-server（进入安装界面，根据提示创建root用户）

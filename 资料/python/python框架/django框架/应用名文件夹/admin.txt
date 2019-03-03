@@ -1,0 +1,10 @@
+from django.contrib import admin
+from .models import Article
+
+# Register your models here.
+#使用ModleAdmin模型定制后台，list_display的值为要显示的字段，ordering的值代表排序方式，-开头代表倒序
+class ArticleAdmin(admin.ModelAdmin):
+    list_display = ('id','title','content')
+    ordering = ('id',)
+
+admin.site.register(Article , ArticleAdmin)

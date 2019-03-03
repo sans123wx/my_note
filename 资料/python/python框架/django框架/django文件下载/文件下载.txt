@@ -1,0 +1,8 @@
+FileResponse()返回可以下载的Httpresponse
+
+class FileResponse（open_file，as_attachment = False，filename =''，** kwargs）:
+response = FileResponse(open('文件地址','rb') , as_attachment = True)
+return response
+
+as_attachment = True 代表文件可以下载
+as_attachment 为2.1中新添加的功能，不用再设置content-type与content-disposition，直接有open_file设置

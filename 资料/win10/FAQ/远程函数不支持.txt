@@ -1,0 +1,9 @@
+cmd打开regedit
+
+找到\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft
+
+找到Windows\CurrentVersion\Policies\System
+
+然后在system右击，新建项目（新建文件夹)\CredSSP\Parameters
+
+接着到Parameters项，右击新建 DWORD（32）位值（D），文件名为 AllowEncryptionOracle 。值设置为2

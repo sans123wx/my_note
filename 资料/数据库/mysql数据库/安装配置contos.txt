@@ -1,0 +1,12 @@
+官网下载mysql80-community-release-el7-1.noarch.rpm
+使用wget
+
+rpm -ivh mysql80-community-release-el7-1.noarch.rpm
+
+yum install mysql-server
+
+打开mysql服务
+service mysqld start
+
+输入mysql -uroot -p默认为空密码
+

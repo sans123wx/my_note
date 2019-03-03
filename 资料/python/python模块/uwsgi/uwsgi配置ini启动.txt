@@ -1,0 +1,23 @@
+与nginx配合使用时，配置为ini启动
+创建一个文件夹放置ini文件
+mkdir mysite_uwsgi
+
+新建mysite_uwsgi.ini配置文件
+[uwsgi]
+chdir = /home/djanog_learnings 网站项目文件夹
+#home = /home/mysite_env 虚拟环境文件夹，不要虚拟环境启动，可以不用
+module = djanog_learnings.wsgi:application 放置uwsgi的文件夹，由于chdir指向了项目文件夹，所以module默认根目录为项目文件夹
+master = True
+processes = 4 进程数
+max-requests = 5000
+harakiri = 60 请求最大时间
+scoket = 127.0.0.1:8001 与nginx设置对应
+uid = 1000 uid和pid都可以使用nginx代替
+gid = 2000
+pidfile = /home/mysite_uwsgi/master.pid 存放主进程pid的文件，重启停止服务时使用，通常和ini文件放在一起
+daemonize = /home/mysite_uwsgi/mysite.log 记录日志通常和ini文件放在一起
+vacuum = True 服务关闭时自动回收一下
+
+配置完成后启动
+uwsgi --ini ini文件路径
+在文件夹中会多出两个文件mysite.log 和 master.pid，记录日志和进程号

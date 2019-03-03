@@ -1,0 +1,43 @@
+通过继承的方式，取代原来的User
+总结：自定义强，但是要删库，最后一开始据使用
+
+1.继承AbstractUser
+from django.contrib.auth.models import AbstractUser
+class User(AbstractUser):
+	nickname = models.CharField(max_length=20)
+	class Meta:
+		pass
+
+
+2.在settings中指定自定义的User
+添加：AUTH_USER_MODEL = 'app名称.自定义的用户模型名称'
+例如：AUTH_USER_MODEL = 'user.User'
+
+
+3.将所有User替换为自定义的User
+被外键关联的User：
+from django.conf.settings import AUTH_USER_MODEL
+将所有的user换成AUTH_USER_MODEL
+直接使用的User
+from django.contrib.auth import get_user_model
+User = get_user_model() #获取自定一的User
+不用替换User
+
+
+4.修改数据库
+删除掉migrations文件夹中的所有迁移文件，再删除数据库
+python manage.py makemigrations
+python manage.py migrate
+重新生成数据库，创建超级管理员
+
+
+5.在后台页面生成自定义的用户
+from django.contrib import admin
+from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
+from django.contrib.auth import get_user_model
+from django.utils.translation import gettext_lazy as _ #翻译
+User = get_user_model()
+@admin.register(BaseUserAdmin)
+class UserAdmin(BaseUserAdmin):
+	fieldsets = 
+	设置自定义字段

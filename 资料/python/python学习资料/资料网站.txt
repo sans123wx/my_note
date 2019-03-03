@@ -1,0 +1,14 @@
+python二进制包
+https://www.lfd.uci.edu/~gohlke/pythonlibs/
+
+bootstrap菜鸟教程
+http://www.runoob.com/bootstrap/bootstrap-tutorial.html
+
+highcharts中文网
+https://www.hcharts.cn/
+
+django学习网站
+http://www.liujiangblog.com/
+
+b站django教程
+https://space.bilibili.com/252028233/#/
