@@ -1,0 +1,76 @@
+django-ckeditor提供widget类
+from ckeditor.widgets import CKEditorWidget
+表单类型 textarea
+
+forms.CharField()的关键字参数widget提供html中表单的属性设置
+forms.CahrField(widget=form.HiddenInput)
+forms.CahrField(widget=form.Textarea)
+labal=False不显示lable
+
+表单提供初始值：
+context['comment_form'] = CommentForm(initial={})
+值为一个字典，key为表单name属性的值，val为表单value的值
+
+？对象不存在错误
+from django.db.models import ObjectDoesNoteExist
+def clean(self):
+	content_type = self.cleaned_data['content_type']
+	object_id = self.cleaned_data['object_id']
+	try:
+		...
+	except ObjectDoneNoteExist:
+		raise forms.ValidtionError('...')
+
+？初始化时接受参数,使用pop，此种做法可以让继承的类，在建立时，提供自己需要的参数
+def __init__(self , *args , **kwargs):
+	if 'user' in kwargs:
+		self.user =kwargs.pop('user')
+	super(CommentForm , self).__init__(*args , **kwargs)
+
+？
+from ckeditor.widgets import CKEditorWidget
+from ckeditor_uploader.widgets import CKEditorUploadingWidget
+text = forms.CharField(widget = CKEditorWidget(config_name = 'comment_ckeditor'))
+更改配置
+在settings文件中
+CKEDITOR_CONFIGS = {
+	 'comment_ckeditor':{
+		#工具栏
+		'toolbar':'custom',
+		#通过自定义的名称与关键子组成关键字，填写内容
+		'toolbar_custom':[
+			[],
+			[]
+]，
+		'width':'auto',
+		'height':
+		'tabSpaces':4,
+		'removePlugins':elementspath,
+		'resize_enabled':False,
+}
+}
+text = forms.CharField(widget = CKEditorUploadingWidget()
+			error_messages={'required':'...'}
+)
+添加
+<script type="text/javascript" src="{% static "ckeditor/ckeditor-init.js" %}"></script>
+<script type="text/javascript" src="{% static "ckeditor/ckeditor/ckeditor.js" %}"></script>
+
+序列化表单值
+$(this).serialize()
+提取表单中的name和value值，已json的方式提交
+cache:false,取消缓存
+error:function(xhr){
+	console.log(xhr);
+}
+返回json数据
+from django.http import JsonResponse
+return JsonResponse({}）
+跟新数据到textarea中
+CKEDITOR.instances['id_text'].updateElement();
+清空输入框内容
+CKEDITOR.instances['id_text'].setData('');
+判断内容是否为空
+CKEDITOR.instances['id_text'].getBody().getText().trim() == ''
+trim()去掉所有空格
+?forms.error
