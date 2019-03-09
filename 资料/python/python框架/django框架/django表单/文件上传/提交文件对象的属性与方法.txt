@@ -1,0 +1,5 @@
+file对象的属性与方法
+charset', 'chunks', 'close', 'closed', 'content_type', 'content_type_extra', 'encoding', 
+'field_name', 'file', 'fileno', 'flush', 'isatty', 'multiple_chunks', 'name', 'newlines', 'open', 
+'read', 'readable', 'readinto', 'readline', 'readlines', 'seek', 'seekable', 'size', 'tell', 'truncate', 
+'writable', 'write', 'writelines'

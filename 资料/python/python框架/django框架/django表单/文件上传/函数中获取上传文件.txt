@@ -1,0 +1,8 @@
+1.html中必须设置entype='multipart'，否则无法获取到文件
+2.通过file = request.FILES['file']，字典键file为html中input元素的name属性的值
+3.获取到file对象，通过file.name可以获取文件名
+file对象的属性与方法
+charset', 'chunks', 'close', 'closed', 'content_type', 'content_type_extra', 'encoding', 
+'field_name', 'file', 'fileno', 'flush', 'isatty', 'multiple_chunks', 'name', 'newlines', 'open', 
+'read', 'readable', 'readinto', 'readline', 'readlines', 'seek', 'seekable', 'size', 'tell', 'truncate', 
+'writable', 'write', 'writelines'

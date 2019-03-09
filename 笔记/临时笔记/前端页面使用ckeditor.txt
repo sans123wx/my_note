@@ -74,3 +74,8 @@ CKEDITOR.instances['id_text'].setData('');
 CKEDITOR.instances['id_text'].getBody().getText().trim() == ''
 trim()去掉所有空格
 ?forms.error
+
+表单提交文件
+提交的文件对象的属性和方法
+charset', 'chunks', 'close', 'closed', 'content_type', 'content_type_extra', 'encoding', 'field_name', 'file', 'fileno', 'flush', 'isatty', 'multiple_chunks', 
+'name', 'newlines', 'open', 'read', 'readable', 'readinto', 'readline', 'readlines', 'seek', 'seekable', 'size', 'tell', 'truncate', 'writable', 'write', 'writelines'
