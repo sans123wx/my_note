@@ -1,0 +1,4 @@
+os.path.join()组合成系统路径
+os.path.exists()路径是否存在，存在返回false
+os.mkdir()创建文件夹
+os.listdir()返回某个文件夹所有文件与文件夹的字符串形式

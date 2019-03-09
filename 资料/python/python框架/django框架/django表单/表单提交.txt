@@ -3,9 +3,9 @@ django中的表单类必须包含FileField字段
 获取数据的方式：
 form = UploadFileForm(request.POST , request.FILES)
 需要一个函数用来文件写入本地磁盘
-handle_upload(file(request.FILES['file'])
+handle_upload_file(request.FILES['file'])
 
-如果django中的表单为ModeleForm
+如果django中的表单为ModelForm
 只需要：
 form = UploadFileForm(request.POST , request.FILES)
 if form.is_valid():

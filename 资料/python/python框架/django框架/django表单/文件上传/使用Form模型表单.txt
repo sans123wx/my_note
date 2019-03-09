@@ -1,0 +1,5 @@
+1.使用Form表单与直接在html文件中创建表单一样
+2.在views中，可以使用form.is_valid()来验证表单的数据
+3.form没有save，只接受数据，要与Model对象配合使用
+4.form表单保存上传的文件，需要自定义保存函数，使用with open
+5.参数upload_to只在Model对象中建立，Form中没有这个参数

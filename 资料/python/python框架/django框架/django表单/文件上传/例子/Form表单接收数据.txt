@@ -1,0 +1,33 @@
+html文件：
+<form action="{%url 'test_upload'%}" method="post" enctype="multipart/form-data">
+	{%csrf_token%}
+	{{form.as_p}}
+	<button type="submit">提交</button>
+</form>
+
+views函数：
+#保存上传文件的函数
+def handle_upload_file(f ,title):
+	file_dir = os.path.join(settings.BASE_DIR , 'media' , title)
+	if not os.path.exists(file_dir):
+		os.mkdir(file_dir)
+	with open(os.path.join(file_dir , f.name) , 'wb+') as file:
+		for chunk in f.chunks():
+			file.write(chunk)
+#处理上传的数据
+def test_upload(request):
+	if request.method == 'POST':
+		form = TestUploadForm(request.POST , request.FILES)
+		if form.is_valid():
+			title = request.POST.get('title')
+			handle_upload_file(request.FILES['file'] , title)
+	else:
+		form = TestUploadForm()
+	context = {}
+	context['form'] = form
+	return render(request , 'test_upload.html' , context)
+
+form表单
+class TestUploadForm(forms.Form):
+	title = forms.CharField(max_length = 30)
+	file = forms.FileField()

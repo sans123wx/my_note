@@ -1,6 +1,10 @@
 1.html中必须设置entype='multipart'，否则无法获取到文件
 2.通过file = request.FILES['file']，字典键file为html中input元素的name属性的值
 3.获取到file对象，通过file.name可以获取文件名
+4.用os.path与BASE_DIR获取存储路径
+5.使用os.path.exists与os.mkdir判断文件是否存在或者创建文件夹
+
+
 file对象的属性与方法
 charset', 'chunks', 'close', 'closed', 'content_type', 'content_type_extra', 'encoding', 
 'field_name', 'file', 'fileno', 'flush', 'isatty', 'multiple_chunks', 'name', 'newlines', 'open', 
