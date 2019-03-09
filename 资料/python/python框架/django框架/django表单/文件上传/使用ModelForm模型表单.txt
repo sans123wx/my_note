@@ -1,0 +1,27 @@
+1.建立ModelForm类
+2.实例化ModelForm，接收上传的数据
+3.通过验证后，使用form.save()函数，用数据建立Model对象，保存数据
+4.上传的文件会自动保存到upload_to指定的位子
+
+例子：
+views中：
+from django.http import HttpResponseRedirect
+from django.shortcuts import render
+from .forms import ModelFormWithFileField
+
+def upload_file(request):
+    if request.method == 'POST':
+        form = ModelFormWithFileField(request.POST, request.FILES)
+        if form.is_valid():
+            # file is saved
+            form.save()
+            return HttpResponseRedirect('/success/url/')
+    else:
+        form = ModelFormWithFileField()
+    return render(request, 'upload.html', {'form': form})
+forms中：
+from .models import UploadModel
+class UploadModelForm(forms.ModelForm):
+	class Meta:
+		model = UploadModel
+		fields = '__all__'
