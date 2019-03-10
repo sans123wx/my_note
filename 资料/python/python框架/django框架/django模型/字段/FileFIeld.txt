@@ -10,6 +10,12 @@ obj.url:文件的html路径,在html中可以通过此路径访问文件
 obj.name:文件在media中的路径
 obj.path:在系统中的路径
 
+修改：
+file为上传的新文件
+obj.save(file.name , file , save=True)：第一个参数为新的文件名，第二个参数为上传的文件
+save后，会根据新的文件保存，但是以前的文件任然存在
+obj.delete(save=True)：删除字段值，并删除基础文件
+
 例子：
 普通设置
 class MyModel(models.Model):
@@ -25,5 +31,19 @@ def user_directory_path(instance, filename):
 
 class MyModel(models.Model):
     upload = models.FileField(upload_to=user_directory_path)
+
+修改FileField字段
+t = TestUpload.objects.first()
+	if request.method == 'POST':
+		form = TestUploadModelForm(instance = t , data = request.POST)
+		file = request.FILES.get('file')
+		if form.is_valid():
+			# title = request.POST.get('title')
+			# handle_upload_file(request.FILES['file'] , title)
+			new_form = form.save(commit=False)
+			new_form.file.delete(save=True)
+			new_form.file.save(file.name , file , save=True)
+			new_form.save()
+			return redirect(reverse('test_upload'))
 
 

@@ -2,4 +2,14 @@
 2.在views中，可以使用form.is_valid()来验证表单的数据
 3.form没有save，只接受数据，要与Model对象配合使用
 4.form表单保存上传的文件，需要自定义保存函数，使用with open
-5.参数upload_to只在Model对象中建立，Form中没有这个参数
+5.upload_to是Model的models.FileField()字段的参数，Form中没有这个参数
+6.将获取的File对象赋值给需要的Model对象，model.file = request.FILES.get('file')
+
+例子：
+form = TestUploadForm(request.POST , request.FILES)
+		file = request.FILES.get('file')
+		if form.is_valid():
+			new_t = TestUpload()
+			new_t.title = form.cleaned_data['title']
+			new_t.file = form.cleaned_data['file']
+			new_t.save()

@@ -1,0 +1,15 @@
+instance：
+值：ModelForm对应的Model的实例
+作用：使用实例的值填充表单
+
+initial:
+值：字典，键为Form或Model中的属性的字符串形式，值为自定义，如果表单中不存在此键，则无效
+作用：为html中表单提供初始值，如果instance同时存在，值为initial中的值，initial不能修改模型对象的值
+
+data：
+值：request.POST
+作用：用提交的数据修改对象的值
+
+例子：
+form = TestUploadModelForm(instance = t , data = request.POST)
+form = TestUploadModelForm(instance = t , initial={'title':'jjj'})

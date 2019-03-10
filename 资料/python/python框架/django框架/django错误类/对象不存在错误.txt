@@ -1,0 +1,5 @@
+ObjectDoesNoteExist：对象不存在时抛出的错误
+from django.db.models import ObjectDoesNoteExist
+例子：
+except ObjectDoneNoteExist:
+	raise forms.ValidtionError('...')

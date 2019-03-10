@@ -1,25 +1,10 @@
 django-ckeditor提供widget类
 from ckeditor.widgets import CKEditorWidget
-表单类型 textarea
 
 forms.CharField()的关键字参数widget提供html中表单的属性设置
-forms.CahrField(widget=form.HiddenInput)
-forms.CahrField(widget=form.Textarea)
+forms.CahrField(widget=forms.HiddenInput)
+forms.CahrField(widget=forms.Textarea)
 labal=False不显示lable
-
-表单提供初始值：
-context['comment_form'] = CommentForm(initial={})
-值为一个字典，key为表单name属性的值，val为表单value的值
-
-？对象不存在错误
-from django.db.models import ObjectDoesNoteExist
-def clean(self):
-	content_type = self.cleaned_data['content_type']
-	object_id = self.cleaned_data['object_id']
-	try:
-		...
-	except ObjectDoneNoteExist:
-		raise forms.ValidtionError('...')
 
 ？初始化时接受参数,使用pop，此种做法可以让继承的类，在建立时，提供自己需要的参数
 def __init__(self , *args , **kwargs):

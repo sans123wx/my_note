@@ -1,0 +1,50 @@
+表单验证的方法form.is_valid()，调用这个方法过程是：
+1.执行full_clean():
+创建cleaned_data字段，验证提交的数据是否符合规范，如果收ModelForm，则会把提交的
+数据转换成相应的Model对应的字段
+2.执行clean():
+ 此方法在源代码完全为空，需要自己定义，但是必须返回cleaned_data，如果在此方法中使用
+raise forms.ValidationError('错误信息'),则是表单错误，即在{{form.non_field_error}}中显示
+3.执行clean_字段名():
+此方法可以单独验证某一个字段，需要自己定义，返回字段值，如果在此方法中使用
+raise forms.ValidationError('错误信息')，则是对应字段错误，即在{{field.errors.as_text}}中显示
+
+添加错误信息
+一般使用raise forms.ValidationError('错误信息')的方式来抛出错误信息
+也可以在views中使用formsForm.add_error({'字段':'错误信息'})的方式来添加错误信息，然后
+return render()返回登录页面，错误信息就会包含在里面
+如果设置字段为None，则表示表单错误
+
+例子：
+class RegForm(forms.Form):
+    username = forms.CharField(label='用户名', 
+                               max_length=30,
+                               min_length=3,
+                               widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'请输入3-30位用户名'}))
+    email = forms.EmailField(label='邮箱', 
+                             widget=forms.EmailInput(attrs={'class':'form-control', 'placeholder':'请输入邮箱'}))
+    password = forms.CharField(label='密码', 
+                               min_length=6,
+                               widget=forms.PasswordInput(attrs={'class':'form-control', 'placeholder':'请输入密码'}))
+    password_again = forms.CharField(label='再输入一次密码', 
+                                     min_length=6,
+                                     widget=forms.PasswordInput(attrs={'class':'form-control', 'placeholder':'再输入一次密码'}))
+
+    def clean_username(self):
+        username = self.cleaned_data['username']
+        if User.objects.filter(username=username).exists():
+            raise forms.ValidationError('用户名已存在')
+        return username
+
+    def clean_email(self):
+        email = self.cleaned_data['email']
+        if User.objects.filter(email=email).exists():
+            raise forms.ValidationError('邮箱已存在')
+        return email
+
+    def clean_password_again(self):
+        password = self.cleaned_data['password']
+        password_again = self.cleaned_data['password_again']
+        if password != password_again:
+            raise forms.ValidationError('两次输入的密码不一致')
+        return password_again

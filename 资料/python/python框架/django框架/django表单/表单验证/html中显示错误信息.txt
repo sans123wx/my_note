@@ -1,0 +1,30 @@
+显示字段错误信息
+当表单验证时，如果发生错误会抛出错误
+会重新return一个页面，内容还是提交前的表单，但是会包含错误信息
+字段错误用{{field.errors.as_text}}显示在页面中
+
+显示表单错误信息
+当表单验证时，如果发生错误会抛出错误
+会重新return一个页面，内容还是提交前的表单，但是会包含错误信息
+表单错误信息用{{form.non_field_errors}}
+
+例子：
+{%for field in form%}
+          {%if forloop.counter == 1%}
+          <div class="form-group has-feedback">
+          <label for={{field.id_for_label}}>{{field.label}}</label>
+          {{field}}
+          <span class="glyphicon glyphicon-user form-control-feedback"></span>
+          </div>
+          {%endif%}
+
+          {%if forloop.counter == 2%}
+          <div class="form-group has-feedback">
+          <label for={{field.id_for_label}}>{{field.label}}</label>
+          {{field}}
+          <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+          </div>
+          {%endif%}
+          <p>{{field.errors.as_text}}</p>
+        {%endfor%}
+        <span class='text-danger'>{{form.non_field_errors}}</span>
