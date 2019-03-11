@@ -1,9 +1,0 @@
-
-？初始化时接受参数,使用pop，此种做法可以让继承的类，在建立时，提供自己需要的参数
-def __init__(self , *args , **kwargs):
-	if 'user' in kwargs:
-		self.user =kwargs.pop('user')
-	super(CommentForm , self).__init__(*args , **kwargs)
-
-
-

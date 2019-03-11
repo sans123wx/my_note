@@ -1,0 +1,11 @@
+1.首选项-设置
+2.设置内容：
+{
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"tab_size":4,
+	"translate_tabs_to_spaces":true,
+	"expand_tabs_on_save":true
+}

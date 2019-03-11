@@ -1,0 +1,25 @@
+原理：
+新建一个类，并继承需要的类。
+从写__init__，通过*args与**kwargs的方式获取参数，此方式不会受到基础类的参数影响，
+可以用关键字参数的方式添加自定义的参数，
+利用字典pop方法弹出自定义的参数，此时剩下的参数与原来的参数相同，在利用super().__init__(*args,**kwargs)
+调用父类的__init__，此方法可以新添加自定义的参数，不会影响原有的类
+例子：
+from copy import deepcopy
+class base_class:
+    def __init__(self ,a , b):
+        self.a = a
+        self.b = b
+    def test_f(self):
+        print(self.a , self.b)
+
+class j_class(base_class):
+    def __init__(self , *args , **kwargs):
+        self.r = deepcopy(kwargs)
+        if 'c' in kwargs:
+            self.c = kwargs.pop('c')
+        self.x = args
+        super().__init__(*args , **kwargs)
+    def test_f(self):
+        print(self.c,self.x , self.r)
+        super().test_f()
