@@ -1,6 +1,6 @@
 表单验证的方法form.is_valid()，调用这个方法过程是：
 1.执行full_clean():
-创建cleaned_data字段，验证提交的数据是否符合规范，如果收ModelForm，则会把提交的
+创建cleaned_data字段，验证提交的数据是否符合规范，如果是ModelForm，则会把提交的
 数据转换成相应的Model对应的字段
 2.执行clean():
  此方法在源代码完全为空，需要自己定义，但是必须返回cleaned_data，如果在此方法中使用

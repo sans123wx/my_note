@@ -1,0 +1,15 @@
+使用字段参数给html元素设置属性
+1.lable：
+设置标签，即html中的text内容
+lable=False，则表示不显示标签
+2.widget：
+关键字参数widget接受一个函数作为参数值，函数为
+forms.TextInput()等，函数接收关键字参数attrs，其值为一个
+字典，项为元素的属性
+3.required：
+为True表示是必填字段
+
+例子：
+class LoginForm(forms.Form):
+    username = forms.CharField(label = '用户名' , widget = forms.TextInput(attrs={'class':'form-control','placeholder':'请输入用户名'}))
+    password = forms.CharField(label = '密码' , widget = forms.PasswordInput(attrs={'class':'form-control','placeholder':'请输入密码'}) , required=True)
