@@ -16,3 +16,8 @@ CKEDITOR_UPLOAD_PATH = 'upload/'
 文件会保存在media/upload文件夹下
 
 3.需要提前设置媒体访问等相关设置
+
+4.其他配置
+CKEDITOR_RESTRICT_BY_USER = True 文件根据用户进行保存
+CKEDITOR_BROWSE_SHOW_DIRS = True 允许用户选择自己的图片
+CKEDITOR_RESTRICT_BY_DATE = False 根据当前日期进行保存

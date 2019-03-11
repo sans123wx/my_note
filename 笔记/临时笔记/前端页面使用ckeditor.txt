@@ -5,43 +5,5 @@ def __init__(self , *args , **kwargs):
 		self.user =kwargs.pop('user')
 	super(CommentForm , self).__init__(*args , **kwargs)
 
-？
-text = forms.CharField(widget = CKEditorWidget(config_name = 'comment_ckeditor'))
-更改配置
-在settings文件中
-CKEDITOR_CONFIGS = {
-	 'comment_ckeditor':{
-		#工具栏
-		'toolbar':'custom',
-		#通过自定义的名称与关键子组成关键字，填写内容
-		'toolbar_custom':[
-			[],
-			[]
-]，
-		'width':'auto',
-		'height':
-		'tabSpaces':4,
-		'removePlugins':elementspath,
-		'resize_enabled':False,
-}
-}
 
 
-序列化表单值
-$(this).serialize()
-提取表单中的name和value值，已json的方式提交
-cache:false,取消缓存
-error:function(xhr){
-	console.log(xhr);
-}
-返回json数据
-from django.http import JsonResponse
-return JsonResponse({}）
-跟新数据到textarea中
-CKEDITOR.instances['id_text'].updateElement();
-清空输入框内容
-CKEDITOR.instances['id_text'].setData('');
-判断内容是否为空
-CKEDITOR.instances['id_text'].getBody().getText().trim() == ''
-trim()去掉所有空格
-?forms.error

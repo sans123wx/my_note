@@ -1,0 +1,9 @@
+1.导入from django.http import JsonResponse
+2.JsonResponse接受字典作为参数，并将字典转换为json数据
+
+例子：
+from django.http import JsonResponse
+data = {}
+data['title'] = r.title
+data['text'] = r.text
+return JsonResponse(data)

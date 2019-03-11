@@ -1,6 +1,6 @@
 1.导入字段
-from ckeditor.fields import RichTextUploadingField
-from ckeditor_uploader.fields import RichTextField
+from ckeditor.fields import RichTextField
+from ckeditor_uploader.fields import RichTextUploadingField
 
 2.在模型中，直接使用导入的字段
 class Richtext(models.Model):

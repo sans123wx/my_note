@@ -1,0 +1,4 @@
+serialize
+$('form').serialize()
+将表单所有的name和value提取出来
+以name1=value2&name2=value2的方式形成数据

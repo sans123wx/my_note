@@ -1,0 +1,7 @@
+跟新数据到textarea中
+CKEDITOR.instances['id_text'].updateElement();
+清空输入框内容
+CKEDITOR.instances['id_text'].setData('');
+判断内容是否为空
+CKEDITOR.instances['id_text'].getBody().getText().trim() == ''
+trim()去掉所有空格

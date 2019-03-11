@@ -1,12 +1,13 @@
 ajax是可以不刷新网页，直接加载网页新内容的方式，可以将数据传入后台，可以直接在后台获取数据传入前端
 $.ajax({ #$表示选择器
 	url:'url', #代表传入的url
+	cache:false,取消缓存
 	data:{'data':data}, #字段打他表示传入的数据，可以使用GET获取
 	success:funcation(data){ #success表示后台成功返回数据后，执行函数funcation，data代表后台返回的数据
 		do something  
 	}
 })
-
+cache:false,取消缓存
 例子:
 $('#id_类别').change(function(){ #$代表选择器，选择id为id_类别的元素；.change代表选择的元素的值发生改变时，执行function函数
 		var unit_type_id = $(this).val();  #this代表触发这个函数的元素本身，.val()表示获取元素value的值
