@@ -1,0 +1,18 @@
+1.引用app，一般放在自己创建的app前
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'ckeditor',
+    'ckeditor_uploader',
+    'test_web_page',
+]
+
+2.如果使用ckeditor_uploader，需要设置上传的文件的路径
+CKEDITOR_UPLOAD_PATH = 'upload/'
+文件会保存在media/upload文件夹下
+
+3.需要提前设置媒体访问等相关设置

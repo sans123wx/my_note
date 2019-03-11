@@ -1,0 +1,4 @@
+1.将templates文件夹设置在项目文件夹下，不要设置在app文件夹下
+2.导入下面两个js文件，直接使用，不要把文件拷贝到自定义的static文件夹下
+<script type="text/javascript" src="{% static "ckeditor/ckeditor-init.js" %}"></script>
+<script type="text/javascript" src="{% static "ckeditor/ckeditor/ckeditor.js" %}"></script>

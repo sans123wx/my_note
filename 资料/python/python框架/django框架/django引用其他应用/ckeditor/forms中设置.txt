@@ -1,0 +1,7 @@
+1.导入widget，对字段进行设置
+from ckeditor.widgets import CKEditorWidget
+form ckeditor_uploader.widgets import CKEditorUploadingWidget
+
+2.对字段进行设置
+使用ModelForm不要特殊设置
+使用Form，需要forms.CharField(widget=CKEditorUploadingWidget())

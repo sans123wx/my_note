@@ -1,5 +1,3 @@
-django-ckeditor提供widget类
-from ckeditor.widgets import CKEditorWidget
 
 ？初始化时接受参数,使用pop，此种做法可以让继承的类，在建立时，提供自己需要的参数
 def __init__(self , *args , **kwargs):
@@ -8,8 +6,6 @@ def __init__(self , *args , **kwargs):
 	super(CommentForm , self).__init__(*args , **kwargs)
 
 ？
-from ckeditor.widgets import CKEditorWidget
-from ckeditor_uploader.widgets import CKEditorUploadingWidget
 text = forms.CharField(widget = CKEditorWidget(config_name = 'comment_ckeditor'))
 更改配置
 在settings文件中
@@ -29,9 +25,7 @@ CKEDITOR_CONFIGS = {
 		'resize_enabled':False,
 }
 }
-text = forms.CharField(widget = CKEditorUploadingWidget()
-			error_messages={'required':'...'}
-)
+
 
 序列化表单值
 $(this).serialize()

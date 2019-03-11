@@ -1,0 +1,12 @@
+1.导入字段
+from ckeditor.fields import RichTextUploadingField
+from ckeditor_uploader.fields import RichTextField
+
+2.在模型中，直接使用导入的字段
+class Richtext(models.Model):
+	title = models.CharField(max_length = 10)
+	text = RichTextUploadingField(verbose_name = '内容')
+
+3.在django自带的后台中，可以直接使用富文本编辑框
+
+4.如果在前端使用，需要在前端进行相关设置

@@ -1,0 +1,4 @@
+通过pip安装
+pip install ckeditor
+
+ckeditor的字段本质还是CharField，使用html源码的方式记录信息
