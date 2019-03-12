@@ -1,0 +1,38 @@
+修改base_dir文件路径
+两套settings，方便开发和生产
+建立settings包，建立两套配置文件
+修改manage.py中，将项目名.settings改为项目名.settings.开发或生产
+生产环境中使用wsgi，需要修改
+
+建立base文件，存放公共配置
+
+在windows中新建立环境变量，存放敏感信息
+？linux中?
+
+生成secret_key
+into shell
+from django.core.management import utils
+utils.get_random_secret_key()
+make secret_key
+
+os.environ is get system's environ,i can make var by myself
+callback a dict
+
+linux'environ
+vim /etc/profile this file is used to save environ
+after the end ,eidt en
+export SECRET_KEY=
+export DATABASE_PASSWORD=
+cmd: source /etc/profile 
+to make it work
+cmd: echo $ + 'the one of the value of environ'
+
+logger
+
+404只要放在templates文件夹下？
+收集静态文件
+STATIC_ROOT = collected
+collectstatic
+修改nginx配置，将static改为static_collected
+图标文件放在根目录
+ 
