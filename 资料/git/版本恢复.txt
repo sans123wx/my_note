@@ -1,0 +1,4 @@
+1.查看版本每次改动
+git reflog
+2.根据reflog的结果选择要恢复的版本
+git reset --hard HEAD{n} 
