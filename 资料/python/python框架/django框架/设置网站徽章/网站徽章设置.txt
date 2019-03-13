@@ -1,0 +1,6 @@
+1.将favicon.ico文件放在项目目录根目录下
+2.设置nginx
+添加：
+lcoation /favicon.ico {
+	alias /home/ems/favicon.ico
+}

@@ -1,0 +1,4 @@
+1.在合适的地方新建一个空白的python文件，如untitled.py
+2.打开注册表regedit
+3.在HKEY_CLASSES_ROOT->.py中新建项ShellNew
+4.在ShellNew中新建字符串值，值为空白pyhon文件的地址，如：c:\untitled.py

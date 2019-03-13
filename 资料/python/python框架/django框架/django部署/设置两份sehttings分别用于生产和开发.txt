@@ -1,0 +1,18 @@
+1.建立settings文件夹，并设置成python包
+2.建立base文件，存放两种环境公用的配置
+3.建立development和production文件，分别设置开发和生产的配置
+如：debug和database
+4.修改manage和uwsgi中settings文件地址，本地使用的是manage文件，
+开发环境使用的是uwsgi文件
+5.将敏感信息设置成系统环境变量，通过os.environ的方式获取
+6.在生产环境中，使用不同的secret_key
+from django.core.management import utils
+utils.get_random_secret_key()
+产生新的key
+7.在linux中设置环境变量
+vim /etc/profile
+在文件末尾添加
+export SECRET_KEY = ''
+令变量生效:source /etc/profile
+查看是否生效：echo $ + 环境变量
+8.将debug改为False时，将404.html等文件放在templates根目录下，系统会自动使用

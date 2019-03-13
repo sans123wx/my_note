@@ -1,0 +1,4 @@
+1.建立settings文件夹，并设置成python包
+2.建立base文件，存放两种环境公用的配置
+3.建立development和production文件，分别设置开发和生产的配置
+如：debug和database

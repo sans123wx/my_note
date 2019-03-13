@@ -1,0 +1,58 @@
+windows注册表基本想，所有注册信息都在这下面
+HKEY_CLASSES_ROOT：是HKEY_LOCAL_MACHINE\Software 的子项，保存打开文件所对应的应用程序信息
+HKEY_CURRENT_USER：是HKEY_USERS的子项，保存当前用户的配置信息
+HKEY_LOCAL_MACHINE：保存计算机的配置信息，针对所有用户
+HKEY_USERS：保存计算机上的所有以活动方式加载的用户配置文件
+HKEY_CURRENT_CONFIG：保存计算机的硬件配置文件信息
+
+打开注册表
+RegOpenKeyEx(key,   subkey,   reserved,   sam)
+Key：必须为表1中列出的项。
+SubKey：要打开的子项,''表示默认值。
+Reserved：必须为0。
+Sam：对打开的子项进行的操作，包括win32con.KEY_ALL_ACCESS、win32con.KEY_READ、win32con.KEY_WRITE等
+例子：
+key = win32api.RegOpenKeyEx(win32con.HKEY_CLASSES_ROOT , '.py' , 0 , win32con.KEY_ALL_ACCESS)
+
+新建子项
+RegCreateKey（key，subKey） 向注册表中添加项
+SubKey：要新建的子项名
+例子：
+win32api.RegCreateKey(key , 'ShellNew')
+
+设置项值
+RegSetValueEx(key，valueName，reserved，type，value) 
+要修改或重新设置注册表某一项的项值。如果项值存在，则修改该项值，如果不存在，则添加该项值。
+Key：要设置的项的句柄。
+valueName：要设置的项值名称。
+Reserved：保留，可以设为0。
+Type：项值的类型。
+Value：所要设置的值。
+项目的类型：REG_SZ:字符类型，常用
+REG_BINARY', 'REG_DWORD', 'REG_DWORD_BIG_ENDIAN', 'REG_DWORD_LITTLE_ENDIAN', 
+'REG_EXPAND_SZ', 'REG_FULL_RESOURCE_DESCRIPTOR', 'REG_LINK', 'REG_MULTI_SZ', 'REG_NONE', 
+'REG_NOTIFY_CHANGE_ATTRIBUTES', 'REG_NOTIFY_CHANGE_SECURITY', 'REG_QWORD', 
+'REG_QWORD_LITTLE_ENDIAN', 'REG_RESOURCE_LIST', 'REG_RESOURCE_REQUIREMENTS_LIST', 'REG_SZ'
+例子：
+win32api.SetValueEx(key , 'filename' , 0 , win32con.REG_SZ , 'value')
+
+读取项值：
+RegQueryValueEx(key，valueName) 读取某一项值
+Key：已经打开的注册表项的句柄。
+valueName：要读取的项值名称，''为默认值。
+例子：
+value = win32api.RegQuery(key , 'filename')
+
+删除项
+RegDeleteKey（key，subKey） 删除注册表中的项
+Key：已经打开的注册表项的句柄。
+subKey：所要删除的子项。
+例子：
+win32api.RegDeleteKey(key,'ShellNew')
+
+关闭注册表
+RegCloseKey(key)
+其参数只有一个，其含义如下：
+Key：已经打开的注册表项的句柄。
+例子：
+win32api.RegCloseKey(key)

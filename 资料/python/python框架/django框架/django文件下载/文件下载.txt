@@ -1,6 +1,7 @@
 FileResponse()返回可以下载的Httpresponse
 
-class FileResponse（open_file，as_attachment = False，filename =''，** kwargs）:
+class FileResponse（open_file，as_attachment = False，filename =''，** kwargs）
+
 response = FileResponse(open('文件地址','rb') , as_attachment = True)
 return response
 
