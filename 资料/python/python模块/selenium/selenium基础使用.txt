@@ -1,0 +1,17 @@
+基础使用
+1.下载浏览器驱动，放在Scripts文件夹下
+2.导入webdriver
+from selenium import webdriver
+3.建立浏览器对象
+bower = webdriver.Chrome()
+4.输入url
+bower.get(url)
+
+无窗口模式
+1.建立配置对象
+opt = webdriver.ChromeOptions()
+2.建立无窗口模式
+opt.set_headless()
+3.带参数建立浏览器对象
+bower = webdriver.Chrome(options=opt)
+

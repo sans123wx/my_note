@@ -1,0 +1,13 @@
+1.find_element()与find_elements()，返回元素对象
+参数：元素标签
+获取一个标签元素或所有标签元素
+例子：
+ele = bower.find_element('a')
+
+2.使用By对象，设置选择条件
+属性：
+'CLASS_NAME', 'CSS_SELECTOR', 'ID', 'LINK_TEXT', 'NAME', 
+'PARTIAL_LINK_TEXT', 'TAG_NAME', 'XPATH'
+作为find_element()与find_elements()的参数
+例子：
+ele = bower.find_element(By.ID , 'kw')
