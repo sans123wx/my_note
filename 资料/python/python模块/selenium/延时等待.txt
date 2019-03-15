@@ -1,0 +1,21 @@
+1.隐式等待
+没有获取到元素时，将会等待一段时间，没有出现则抛出错误
+bower.implicitly_wait(10)，默认为0
+
+2.显示等待
+到达规定时间，元素是没有出现则抛出错误
+1.设置规定时间，第一个参数为页面对象
+from selenium.webdriver.support.ui import WebDriverWait
+wait = WebDriverWait(bower , 10)
+2.设置等待条件
+from selenium.webdriver.support import expected_conditions as EC
+EC为条件对象
+wait.until(EC.presence_of_element_located((By.ID , 'kw'))) ， 参数为节点元组
+所有条件：
+'alert_is_present', 'element_located_selection_state_to_be', 'element_located_to_be_selected', 
+'element_selection_state_to_be', 'element_to_be_clickable', 'element_to_be_selected', 
+'frame_to_be_available_and_switch_to_it', 'invisibility_of_element', 'invisibility_of_element_located', 
+'new_window_is_opened', 'number_of_windows_to_be', 'presence_of_all_elements_located', 
+'presence_of_element_located', 'staleness_of', 'text_to_be_present_in_element', 'text_to_be_present_in_element_value', 
+'title_contains', 'title_is', 'url_changes', 'url_contains', 'url_matches', 'url_to_be', 'visibility_of', 'visibility_of_all_elements_located', 
+'visibility_of_any_elements_located', 'visibility_of_element_located'

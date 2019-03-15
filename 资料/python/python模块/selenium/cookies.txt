@@ -1,0 +1,8 @@
+1.获取cookies
+bower.get_cookies()
+返回一个列表，列表元素为一个字典，存放cookies
+2.增加cookies
+bower.add_cookies({})，参数为一个字典
+此方法为增加一项新的cookies，不会影响原有的cookies，get_cookies会多一个列表的元素
+3.删除cookies
+bower.delete_all_cookies()

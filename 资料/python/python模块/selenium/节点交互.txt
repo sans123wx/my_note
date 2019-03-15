@@ -1,0 +1,8 @@
+1.填写输入框
+ele.send_keys('')
+2.点击，选择打勾
+ele.click()
+3.提交
+ele.submit()
+4.清空输入框
+ele.clear()

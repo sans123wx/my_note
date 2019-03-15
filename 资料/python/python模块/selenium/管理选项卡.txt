@@ -1,0 +1,6 @@
+1.新增选项卡，使用js代码
+bower.execute_script('window.open()')，打开一个新的选项卡
+2.切换页面对象到新的选项卡
+bower.swith_to_window(bower.window_handles[1])
+swith_to_window()函数切换到新的选项卡
+bower.window_handles[]选择选项卡，从0开始

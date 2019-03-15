@@ -1,0 +1,12 @@
+1.导入ActionChains类
+from selenium.webdriver import ActionChains
+2.建立对象，参数为页面对象
+actions = ActionChains(bower)
+3.存储动作
+actions.drag_and_drop(ele0 , ele1)，将鼠标重元素0托到元素1
+click', 'click_and_hold', 'context_click', 'double_click', 'drag_and_drop', 
+'drag_and_drop_by_offset', 'key_down', 'key_up', 'move_by_offset', 
+'move_to_element', 'move_to_element_with_offset', 'pause',  'release', 
+'reset_actions', 'send_keys', 'send_keys_to_element'
+ 4.执行存储动作
+actions.perform()

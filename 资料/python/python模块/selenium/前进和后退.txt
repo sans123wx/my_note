@@ -1,0 +1,6 @@
+后退
+bower.back()
+前进
+bower.forward()
+关闭
+bower.close()

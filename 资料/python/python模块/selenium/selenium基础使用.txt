@@ -2,7 +2,7 @@
 1.下载浏览器驱动，放在Scripts文件夹下
 2.导入webdriver
 from selenium import webdriver
-3.建立浏览器对象
+3.建立页面对象
 bower = webdriver.Chrome()
 4.输入url
 bower.get(url)
@@ -12,6 +12,6 @@ bower.get(url)
 opt = webdriver.ChromeOptions()
 2.建立无窗口模式
 opt.set_headless()
-3.带参数建立浏览器对象
+3.带参数建立页面对象
 bower = webdriver.Chrome(options=opt)
 

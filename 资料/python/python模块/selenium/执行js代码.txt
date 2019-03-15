@@ -1,0 +1,2 @@
+·½·¨execute_script(js´úÂë)
+bower.execute_script('alert("to boom")')

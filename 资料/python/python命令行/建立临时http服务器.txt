@@ -1,0 +1,3 @@
+python -m http.server
+将文件夹下的文件显示在http中，地址为本地ip加上端口号，
+端口号默认为8000，如果文件夹下有index.html将默认使用此页面内容
