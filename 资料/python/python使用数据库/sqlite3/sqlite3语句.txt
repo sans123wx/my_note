@@ -1,0 +1,5 @@
+1.查看所有表，按照名称排序
+select name from sqlite_master where type='table' order by name
+
+2.查询字段的详细信息
+pragma table_info(表名)

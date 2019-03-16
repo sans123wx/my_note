@@ -1,0 +1,5 @@
+1.显示所有表
+show tables
+
+2.显示表的所有字段信息
+show columns from 表名

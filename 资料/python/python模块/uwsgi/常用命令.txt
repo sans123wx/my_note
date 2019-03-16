@@ -1,0 +1,9 @@
+1.uwsgi --http :8000 --uwsgi-file python文件
+http后有空格，python文件自己指定，端口号自己指定
+
+2.uwsgi --chdir 项目文件夹 --home 虚拟环境文件夹 --http :端口号 --module 项目中wsgi文件夹.wsgi:application
+uwsgi不支持静态文件
+
+3.uwsgi --reload/stop master.pid文件的路径
+重启或者关闭uwsgi
+

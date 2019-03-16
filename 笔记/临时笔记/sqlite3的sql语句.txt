@@ -1,28 +1,16 @@
-查询所有表，按照名称排序
-select name from sqlite_master where type='table' order by name
-查询字段的详细信息
-pragma table_info(表名)
-？占位符
-executemany执行多条sql语句
-fetchone查询单行结果
-cus.execute()返回一个可迭代对象，值为查询结果的元组
-日期类型data，接受字符串
-自增字段，接受None
+mysql
+自增字段，不赋值
 ？设置自增
 ？创建表
+mysql> CREATE TABLE runoob_tbl(
+   -> runoob_id INT NOT NULL AUTO_INCREMENT,
+   -> runoob_title VARCHAR(100) NOT NULL,
+   -> runoob_author VARCHAR(40) NOT NULL,
+   -> submission_date DATE,
+   -> PRIMARY KEY ( runoob_id )
+   -> )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-
-Python type	SQLite type
-None	NULL
-int	INTEGER
-float	REAL
-str	TEXT
-bytes	BLOB
-This is how SQLite types are converted to Python types by default:
-
-SQLite type	Python type
-NULL	None
-INTEGER	int
-REAL	float
-TEXT	depends on text_factory, str by default
-BLOB	bytes
+INSERT INTO table_name ( field1, field2,...fieldN )
+                       VALUES
+                       ( value1, value2,...valueN );
+manage导入时，处理报错

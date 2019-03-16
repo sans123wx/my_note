@@ -1,0 +1,26 @@
+1.打开或者创建数据库
+db代表sqlite3或者pymysql，具体看使用什么数据库模块
+conn = db.connect('数据库地址')
+如果不存在则创建数据库，如果是mysql数据库
+
+2.创建游标
+cur = conn.cursor()
+
+3.使用sql语句
+cur.execute('sql语句')，为查询语句时返回一个可迭代对象
+使用cur.fetchall()查询所有结果，cur.fetchone()查询第一条结果
+防止sql注入，可以使用？作为占位符，第二参数使用元组，存放数据
+例如：
+cur.execute('INSERT INTO 表名 VALUE(?,?)' , ('value1' , 'value2'))
+cur.executemany()，插入多条数据
+purchases = [('2006-03-28', 'BUY', 'IBM', 1000, 45.00),
+             ('2006-04-05', 'BUY', 'MSFT', 1000, 72.00),
+             ('2006-04-06', 'SELL', 'IBM', 500, 53.00),
+            ]
+c.executemany('INSERT INTO stocks VALUES (?,?,?,?,?)', purchases)
+
+4.保存修改数据
+conn.commit()
+
+5.关闭数据库
+conn.close()
