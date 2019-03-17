@@ -1,0 +1,17 @@
+类似于数据的一中存储数据的元组，可以设置名称和字段
+1.导入 from collections import namedtuple
+namdtuple是一个函数，返回一个type
+
+2.构造函数
+类 = namedtuple(类名 , 字符串或是字符串组成的可迭代对象)
+返回一个类，类型为type
+第一个参数为类的名称
+第二个参数为有字符串组成的可迭代对象，或者由空格隔开的字符串
+例子：
+City = namedtuple('City' , 'name county')
+
+3.实例化
+例子：
+tokyo = City('Tokyo' , 'jp' , 36.9)
+实例化一个对象，名称为tokyo，参数为前面定义的标题与字段，使用逗号隔开
+可以通过tokyo.City,tokyo.name获取字段值

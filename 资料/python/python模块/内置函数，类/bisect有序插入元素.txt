@@ -1,0 +1,25 @@
+能将元素按照顺序插入序列中
+1.导入
+import bisect
+
+2.获取插入的位子
+index = bisect.bisect(序列,要插入的值 | lo , hi)
+第一个参数为一个序列
+第二个参数为要插入的值
+返回一个位子的索引值，类型的整数
+lo与hi表示取值范围，从lo到hi的位子开始插入
+lo默认为0 ， hi默认为序列的长度
+bisect.bisect_left表示返回在有相同元素时，相同元素的位子，即会放在相同的前面
+
+3.将值插入序列，就地就该序列
+bisect.insort(序列,要插入的值 | lo , hi)
+说明与第二条相同
+同时，也有bisect.insort_left()
+
+如果要显示每一次插入的结果，使用bisect，如果将全部数值插入后再排序，使用list.sort()
+
+例子：
+def grade(score , breakpoints=[60,70,80,90] , grades = 'FDCBA'):
+        i = bisect.bisect(breakpoints , score)
+        return grades[i]
+[grade(score) for score in [33,99,77,80,90,100]]
