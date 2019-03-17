@@ -1,0 +1,32 @@
+1.创建表
+create table 表名(
+	字段名 字段类型(例：INT) 是否允许为空(值：NULL/NOT NULL) | AUTO_INCREMENT,
+	PRIMARY KEY(字段名)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8/utfmb4;
+AUTO_INCREMENT：设置自增，只能设置一个，一般为主键
+PRIMARY KEY:设置字段为主键，只能有一个主键
+ENGINE ：引擎
+CHARSET：字符集
+例子：
+mysql> CREATE TABLE runoob_tbl(
+   -> runoob_id INT NOT NULL AUTO_INCREMENT,
+   -> runoob_title VARCHAR(100) NOT NULL,
+   -> runoob_author VARCHAR(40) NOT NULL,
+   -> submission_date DATE,
+   -> PRIMARY KEY ( runoob_id )
+   -> )ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+2.删除表
+delete from 表名
+如果表中的字段有外键或者外联，需要删除对应的外键或外联
+通过指令：
+select
+TABLE_NAME,COLUMN_NAME,CONSTRAINT_NAME
+from INFORMATION_SCHEMA.KEY_COLUMN_USAGE
+where CONSTRAINT_SCHEMA ='数据库' AND
+REFERENCED_TABLE_NAME = '表名'
+查询到所有字段的外键或外联，删除掉对应的表，才能删除要删除的表
+
+3.插入数据
+INSERT INTO 表名(字段名1,字段名2,...字段N) VALUES (值1,值2,...值N)
+对于自增字段，不要写入值，也不要写入NULL，不用写，数据库会自动加1

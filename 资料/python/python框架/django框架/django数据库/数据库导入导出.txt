@@ -1,0 +1,13 @@
+1.数据库导出
+python manage.py dumpdata > data.json
+
+2.数据库导入
+python manage.py loaddata  data.json
+导入有重复数据时，如果导入的数据是完整的，那么可以进入数据库，
+将有重复数据的表删除，删除表时遇到有外键的，需要先删除对应外键的表。
+查询表的所有外键：
+select
+TABLE_NAME,COLUMN_NAME,CONSTRAINT_NAME
+from INFORMATION_SCHEMA.KEY_COLUMN_USAGE
+where CONSTRAINT_SCHEMA ='数据库' AND
+REFERENCED_TABLE_NAME = '表名';
