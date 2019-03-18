@@ -1,0 +1,13 @@
+1.安装gcc
+下载安装MinGW，地址www.mingw.org
+
+2.安装时勾上图形界面选项
+
+3.选择所有的package，使用mark for installation
+
+4.点击右上角installation->apply changes，然后点击apply
+
+5.将bin目录添加到系统环境
+
+6.测试
+cmd输入gcc -v
