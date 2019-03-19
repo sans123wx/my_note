@@ -1,0 +1,44 @@
+概述：
+数组类似与列表，有几乎所有列表的操作，insert，extend等，
+数组只能存放数字，整数与小数，
+数组存放的不是对象，而是字节表述，并且只能是一种数据
+如果处理数字，数组比列表更高效
+
+导入：
+from array import array
+
+建立数组对象：
+a = array('类型代码' , 只有一种数据的序列)
+例如：a = array('d' , (random.random() for i in range(10**7)))
+
+数据存放与读取：
+存放
+f = open('test.txt' , 'wb')
+a.tofile(f)
+f.close()
+读取
+a = array('d')
+f = open(''test.txt , 'rb')
+a.fromfile(f)
+f.close() 
+
+注：
+array没有sort方法
+c = array('a的代码类型' , sorted(a))，返回一个新的数组
+bisect.insert可以对数组使用
+
+类型代码：
+Type code      C Type     Minimum size in bytes
+     'b'    signed integer           1
+     'B'    unsigned integer         1
+     'u'    Unicode character        2 
+     'h'    signed integer           2
+     'H'    unsigned integer         2
+     'i'    signed integer           2
+     'I'    unsigned integer         2
+     'l'    signed integer           4
+     'L'    unsigned integer         4
+     'q'    signed integer           8 
+     'Q'    unsigned integer         8 
+     'f'    floating point           4
+     'd'    floating point           8
