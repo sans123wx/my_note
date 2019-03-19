@@ -1,0 +1,11 @@
+1.打开www.mingw-w64.org
+
+2.右上角下载，然后找到source
+
+3.下载带有install的exe文件
+
+或者
+https://sourceforge.net/projects/mingw-w64/直接下载
+
+安装：
+选择seh，win32
