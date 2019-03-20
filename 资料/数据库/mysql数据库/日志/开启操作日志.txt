@@ -1,0 +1,8 @@
+1.查看日志是否开启
+show variables like 'general%';
+查询结果：
+general_log ON/OFF
+general_log_file 显示日志存放位置
+
+2.开启日志：
+set global general_log='ON'
