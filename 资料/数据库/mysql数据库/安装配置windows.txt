@@ -2,7 +2,7 @@ windows下
 在官网下载所需版本mysql
 地址：https://dev.mysql.com/downloads/mysql/
 解压后放在c盘根目录
-使用mysqld --initalize-insecure --user=mysql --consol;
+使用mysqld --initialize-insecure --user=mysql --consol;
 创建my.ini文件，对其进行配置
 例子：
 
