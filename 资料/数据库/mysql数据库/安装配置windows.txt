@@ -2,10 +2,8 @@ windows下
 在官网下载所需版本mysql
 地址：https://dev.mysql.com/downloads/mysql/
 解压后放在c盘根目录
-使用mysqld --initialize-insecure --user=mysql --consol;
-创建my.ini文件，对其进行配置
+创建my.ini文件，对其进行配置，放在mysql根目录
 例子：
-
 [mysqld]
 #设置mysql的安装目录
 basedir=C:/mysql-8.0.13-winx64
@@ -37,6 +35,12 @@ port=3306
 
 添加到系统环境
 将bin目录地址加入环境变量
+
+使用mysqld --initialize-insecure --user=mysql
+
+安装mysql服务mysqld --install，删除mysql服务mysqld --remove
+
+开启mysql服务，net start mysql ，关闭mysql服务 net stop mysql
 
 添加时区表
 windows下不自带时区表，需要在官网下载
