@@ -1,0 +1,9 @@
+1.需要sys与pyqt5.QtWidgets
+import sys
+from PyWt5.QtWidgets import QApplicaton , QWidget
+
+2.基本结构
+app = QApplication(sys.argv)
+w = QWidget()
+w.show()
+sys.exite(app.exec_())
