@@ -1,0 +1,7 @@
+1.导入
+from PyQt5.QtGui import QFont
+
+2.初始化
+QFont(字体, 字体大小)
+第一个参数为字体
+第二个参数为字体大小

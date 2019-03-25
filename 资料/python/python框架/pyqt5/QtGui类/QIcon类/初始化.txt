@@ -1,0 +1,5 @@
+1.导入
+from pyqt5.QtGui import QIcon
+
+2.初始化
+初始化对象时，需要一个图片对象作为参数

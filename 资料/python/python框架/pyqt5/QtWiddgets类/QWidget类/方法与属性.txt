@@ -1,0 +1,14 @@
+1.resize(宽,高)
+设置框的宽和高，类型为整数
+
+2.move(坐标x,坐标y)
+设置窗体左上角的坐标
+
+3.setWindowTitle()
+设置框体标题，参数为标题字符串
+
+4.setGeomentry(宽，高，x坐标， y坐标)
+setGeometry是resize和move的合体
+
+5.setWindowIcon(QIcon对象)
+设置框体的徽章，接受一个QIcon对象作为参数
