@@ -36,3 +36,11 @@ int i = 10; const int *p = i;Ö¸Ïò³£Á¿µÄÖ¸Õë£¬²»ÄÜÓÃ*p¸Ä±ä¶ÔÏóµÄÖµ£¬¶ÔÏóµÄÖµ¸Ä±ä£
 int i = 10;int *const p = i;³£Á¿Ö¸Õë£¬¿ÉÒÔÍ¨¹ý*p¸Ä±ä¶ÔÏóµÄÖµ£¬µ«ÊÇ²»ÄÜ¸øpÖØÐÂ¸³ÖµÁíÒ»¸ö¶ÔÏó£¬p±£´æµÄ
 ¶ÔÏóµÄµØÖ·ÖµÒ»Ö±²»»á±ä
 int i = 10;const int *const p = i ;Ö¸Ïò³£Á¿µÄ³£Á¿Ö¸Õë£¬¼È²»ÄÜ¸Ä±ä*pµÄÖµ£¬Ò²²»ÄÜ¸Ä±äpÖ¸ÏòµÄ¶ÔÏó
+
+8.³£Á¿±í´ïÊ½
+Óï·¨£º
+constexpr Êý¾ÝÀàÐÍ ±äÁ¿±êÊ¶·û ±í´ïÊ½
+constexpr int a = 20;
+ÔÚ±àÒëµÄÊ±ºò£¬±àÒëÆ÷»á°Ñ±í´ïÊ½¼ÆËã³ö½á¹û£¬½«Öµ¸³¸ø³£Á¿±í´ïÊ½£¬Èç¹ûÔÚ±àÒëÊ±£¬²»ÄÜ¼ÆËã³ö³£Á¿½á¹û£¬Ôò»á±¨´í
+constexpr¶¨ÒåÒ»¸öÖ¸ÕëÊ±£¬²»ÄÜ°Ñº¯ÊýÌåÄÚµÄÖµ¸³¸øÖ¸Õë£¬ÒòÎªº¯ÊýÌåÄÚµÄ±äÁ¿µØÖ·²»ÊÇ¹Ì¶¨µÄ£¬µ«ÊÇº¯ÊýÌåµÄÊ±¹Ì¶¨µÄ
+ 
