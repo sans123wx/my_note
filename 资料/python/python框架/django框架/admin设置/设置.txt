@@ -1,0 +1,8 @@
+@adminregister(Model)
+class ModeAdmin(admin.ModelAdmin):
+	list_display 显示字段
+	list_filter 筛选
+	search_fields 查询字段，值为元组或列表
+	raw_id_fields 使用id作为外键的值
+	date_hierarchy 这为一个时间字段，根据时间分类
+	ordering 排序
