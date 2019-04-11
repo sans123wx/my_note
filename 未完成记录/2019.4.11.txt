@@ -1,0 +1,13 @@
+1.cropper.js库的api
+2.django越过csrf方法
+3.django只接受post请求，以及相关设置
+4.自定义密码修改
+5.layer.js库的api
+6.canvas，dataurl,blob之间相互转换
+7.FormData使用
+8.ajax两个新选项
+9.bootstrap框架模态框的使用
+10.设置input：file的样式
+11.获取file对象
+12.django模板include
+13.makedone配置使用

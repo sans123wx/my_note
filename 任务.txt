@@ -11,5 +11,10 @@
 11.建立资源库，并写爬虫实现搜索
 12.leetcode题库，电子书
 13.看完流畅的python
-14.看完老齐django
 15.看完django企业实战
+16.重新修改表单上传
+17.看完http权威指南第四部分，以及第五部分32，33，34部分
+18.完成2019.4.11日前的总结
+19.建立my_js
+20.通读一遍https://fengyuanchen.github.io/jquery-cropper/的源码
+21.将cropper.js换成2.0版本
