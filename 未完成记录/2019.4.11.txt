@@ -1,5 +1,4 @@
-1.cropper.js库的api
-2.django越过csrf方法
+
 3.django只接受post请求，以及相关设置
 4.自定义密码修改
 5.layer.js库的api

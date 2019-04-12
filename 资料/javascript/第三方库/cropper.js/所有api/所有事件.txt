@@ -1,0 +1,69 @@
+ready—当一个cropper实例完全构建时，这个事件就会发生。 
+cropstart—当画布(图像包装器)或剪切框开始发生变化时，该事件就会发生。
+
+返回的参数有event.originalEvent:；类型event；参数： mousedown, touchstart 和 pointerdown ；即触发的事件源 
+event.action:：发生事件的行为（移动的方向）
+
+crop：创建一个剪切框的时候
+move：移动图片的时
+zoom：放大缩小canvas的时候
+e：调整剪切框东侧的大小
+w：调整剪切框西侧的大小
+s：调整剪切框南侧的大小
+n：调整剪切框北侧的大小
+se：东南
+sw：西南
+ne：东北
+nw：西北
+all：所有方向
+$('#image').on('cropstart', function (e) {
+  console.log(e.type); // cropstart
+  console.log(e.namespace); // cropper
+  console.log(e.action); // ...
+  console.log(e.originalEvent.pageX);
+
+  // Prevent to start cropping, moving, etc if necessary
+  if (e.action === 'crop') {
+    e.preventDefault();
+  }
+});
+
+cropmove—当画布(图像包装器)或剪切框正在发生变化时，该事件就会发生；
+
+返回的参数有event.originalEvent:；类型event；参数： mousemove, touchmove 和 pointermove ；即触发的事件源 
+event.action:：发生事件的行为（移动的方向） 和 cropstart的相同
+
+cropend—当画布(图像包装器)或剪切框正在发生变化结束时，该事件就会发生；
+
+返回的参数有event.originalEvent:；类型event；参数： mouseup, touchend、pointerup 、pointercancel和 touchcancel ；即触发的事件源 
+event.action:：发生事件的行为（移动的方向） 和 cropstart的相同
+
+crop—当画布(图像包装器)或农作物盒发生改变时，该事件就会发生。
+
+event.x
+event.y
+event.width
+event.height
+event.rotate
+event.scaleX
+event.scaleY 
+这些参数的含义去参照getData；
+zoom—当一个cropper实例开始放大或缩小画布(图像包装器)时，这个事件就会发生。
+
+返回的参数有 
+event.originalEvent:；类型event；参数： wheel, touchmove ；即触发的事件源 
+event.oldRatio:类型number；当前canvas的裁切比例 
+event.ratio:类型number；新的canvas的裁切比例(canvasData.width / canvasData.naturalWidth)
+
+$().on('zoom', function (e) {
+
+  // Zoom in
+  if (e.ratio > e.oldRatio) {
+
+    // Prevent zoom in
+    e.preventDefault();
+  }
+
+  // Zoom out
+  // ...
+});

@@ -1,0 +1,43 @@
+1.引入css
+<link  href="/path/to/cropper.css" rel="stylesheet">
+<script src="/path/to/jquery.js"></script>
+<script src="/path/to/cropper.js"></script>
+如果要使用jquery-cropper.js，不能使用cropper.min.js
+<script src="/path/to/jquery-cropper.js"></script>
+
+2.html结构，直接设置img的宽高是没有效果的，
+但是可以在父盒子上（即.box）设置；
+<div class="box">
+  <img id="image" src="picture.jpg">
+</div>
+
+3.一定要添加
+img {
+  max-width: 100%; 
+}
+
+4.使用参数示例
+$('#image').cropper({
+        aspectRatio: 16 / 9,
+        viewMode:1,
+    });
+
+5.使用方法示例
+$().cropper({
+  ready: function () {
+    $().cropper('method', argument1, , argument2, ..., argumentN);
+  }
+});
+
+6.事件使用实例
+$('#image').on('cropstart', function (e) {
+  console.log(e.type); // cropstart
+  console.log(e.namespace); // cropper
+  console.log(e.action); // ...
+  console.log(e.originalEvent.pageX);
+
+  // Prevent to start cropping, moving, etc if necessary
+  if (e.action === 'crop') {
+    e.preventDefault();
+  }
+});

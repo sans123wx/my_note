@@ -1,0 +1,10 @@
+1.给input元素添加父元素label
+2.label内的文本和其他元素都可以触发input
+3.将input标签设置为position: absolute;clip: rect(0, 0, 0, 0)，将其隐藏
+<label for="file0">
+       <input type="file" name="file0" id="file0" multiple="multiple">
+                hfjkhsdkj
+        <span class="glyphicon glyphicon-plus">
+	klfdjalkfj
+        </span>
+</label>

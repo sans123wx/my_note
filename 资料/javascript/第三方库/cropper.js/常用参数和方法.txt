@@ -1,0 +1,113 @@
+1.viewMode—定义cropper的视图模式
+0：没有限制，3可以移动到2外。 
+1 : 3只能在2内移动。 
+2：2图片 不全部铺满1 （即缩小时可以有一边出现空隙） 
+3：2图片填充整个1
+
+2.dragMode —-定义cropper的拖拽模式。
+类型: String 
+默认: ‘crop’ 
+选项: 
+‘crop’: 可以产生一个新的裁剪框3 
+‘move’: 只可以移动3 
+‘none’: 什么也不处理
+
+3.aspectRatio—-裁剪框的宽高比
+类型:number；默认：NAN； 
+在默认的时候。可以随意改变裁剪框的大小；我这里的设置的值为 16/9;
+
+5.preview—-添加额外的元素(容器)以供预览
+类型：Element / String 默认：“ ”； 
+注意这里是一个dom元素。必须可以被Document.querySelectorAll获取到； 
+preview:".small", 
+HTML结构：<div class="small"></div>；注意一定要设置small的宽高；最好和裁剪比例一致；还有如果要想正确的显示出裁剪的区域需要加上样式overflow: hidden; 
+
+10.modal—显示图片上方的黑色模态并在裁剪框下面。
+
+类型：Boolean 默认：true； 
+改成false效果图为： 
+
+11.guides—显示在裁剪框上方的虚线。
+
+类型：Boolean 默认：true； 
+改成false效果图为
+
+13.highlight–在裁剪框上方显示白色的区域(突出裁剪框)。
+
+类型：Boolean 默认：true；
+
+14.background–显示容器的网格背景。（就是后面的马赛克）
+
+类型：Boolean 默认：true；
+
+4 . replace(url[, onlyColorChanged])—替换图像的src并重新构建cropper
+
+url :–类型String；—新图片的url； 
+onlyColorChanged (optional):–类型：Boolean默认：false；—-如果只是改变颜色，而不是大小，那么cropper只需要改变所有相关图像的src，不需要重新构建cropper。这可以用于应用过滤器。（意思是：改成true，图像的比例会发生变化自适应父盒子的大小；会失真的）
+
+$("#replace").on("click", function () {
+        $('#image').cropper('replace',"./images/111.jpeg",true );
+    })
+
+7 . destroy()—销毁cropper并从图像中删除整个cropper。
+
+$("#destroy").on("click", function () {
+        $('#image').cropper('destroy');
+    })
+
+25 . getCroppedCanvas([options])—画一张剪裁的图片。如果没有剪裁，则返回一个绘制整个im的画布（这个感觉很有用）
+
+options 类型Object 
+- width输出Canvas的宽度 
+- height输出Canvas的高度 
+- minWidth输出Canvas的最小宽度；默认值是0 
+- minHeight输出Canvas的最小高度；默认值是0 
+- maxWidth输出Canvas的最大宽度；默认值是Infinity（无穷大） 
+- maxHeight输出Canvas的最大高度；默认值是Infinity（无穷大） 
+- fillColor在输出画布Canvas中填充任何alpha的颜色，默认值是透明的 
+- imageSmoothingEnabled如果图像被设置为平滑(true，默认)或不设置(false)。 
+- imageSmoothingQuality设置图像的质量，一个“low”(默认)、“medium”或“high”。 
+返回值：类型：HTMLCanvasElement画布绘制出了剪裁过的图像 
+注意：输出canvas画布的宽高比将自动适应剪切框的纵横比。 
+如果您打算从输出画布canvas中获得一个JPEG图像，您应该首先设置填色选项，否则，JPEG图像中的透明部分将在缺少情况下变为黑色。 
+为了避免获得空白的输出图像，您可能需要将maxWidth和maxHeightproperties设置为有限的数字，从而来画布元素的大小限制。
+
+$("#getCroppedCanvas").on("click", function () {
+        console.log($('#image').cropper('getCroppedCanvas'));;
+        var cas=$('#image').cropper('getCroppedCanvas');
+        var base64url=cas.toDataURL('image/jpeg');
+        cas.toBlob(function (e) {
+            console.log(e);  //生成Blob的图片格式
+        })
+        console.log(base64url); //生成base64图片的格式
+        $('.cavans').html(cas)  //在body显示出canvas元素
+    })
+$('#image').cropper('getCroppedCanvas', {
+  width: 160,
+  height: 90,
+  minWidth: 256,
+  minHeight: 256,
+  maxWidth: 4096,
+  maxHeight: 4096,
+  fillColor: '#fff',
+  imageSmoothingEnabled: false,
+  imageSmoothingQuality: 'high',
+});
+
+// Upload cropped image to server if the browser supports `HTMLCanvasElement.toBlob`
+$('#image').cropper('getCroppedCanvas').toBlob(function (blob) {
+  var formData = new FormData();
+  formData.append('croppedImage', blob);
+  $.ajax('/path/to/upload', {
+    method: "POST",
+    data: formData,
+    processData: false,
+    contentType: false,
+    success: function () {
+      console.log('Upload success');
+    },
+    error: function () {
+      console.log('Upload error');
+    }
+  });
+});
