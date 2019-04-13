@@ -1,0 +1,22 @@
+1.默认使用的是auth中的views文件
+from django.contrib.auth import views as auth_views
+
+2.使用密码修改函数
+auth_views.PasswordChangeView.as_view(template_name = "path/to/password_change_form.html")
+template_name指定要使用的html文件，否则使用默认页面
+当密码修改成功以后，会跳转到密码修改成功页面
+在函数中，success_url = reverse_lazy('password_change_done')
+已经设置好了密码修改后跳转的path的name，所以在自定义的修改成功页面的path，其name必须为password_change_done
+否则需要修改此函数的，跳转到自定义的name，特别是使用了自定义命名空间的方式
+
+3.表单包含字段
+password1：旧密码
+password2：新密码
+password2带有help_text
+
+4.密码修改成功后会跳转到修改成功页面，所以要设置一个路由
+使用函数：
+auth_views.PasswordChangeDoneView.as_view()
+可以自定义template_name 参数，最好将path的name参数设置为password_change_done
+如果使用了自定义的名称或使用了命名空间，需要修改PasswordChangeView中的success_url
+将password_change_done修改为自定义的名称

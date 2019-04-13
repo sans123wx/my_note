@@ -1,0 +1,18 @@
+1.语法
+location.方法()或属性
+
+2.属性
+location.href -> 获取当前URL | 返回值：URL
+赋值：当前页面跳转到新的页面
+
+location.search -> 获取URL中？后面的信息，不包括#后的信息 | 返回值：字符串
+赋值 -> 值：字符串("name=value") 效果：用新值从新加载页面
+
+location.hash -> 获取URL中#后面的信息 | 返回值：字符串
+赋值 -> 值：字符串("name=value") ; 效果：链接到#指定部门
+
+3.方法
+location.replace(字符串(URL)) -> 当前页面链接到指定地址 | 返回值：void
+
+reload() -> 从新加载页面
+

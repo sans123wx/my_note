@@ -1,0 +1,32 @@
+1.直接调用document对象，代表html文档
+
+2.语法：
+document.方法(参数)或属性
+
+3.方法：
+document.writeln(参数：字符串) ->在html文档末尾添加字符 | 返回值：undefined
+
+获取HTMLCollation或HTMLElement对象功能
+document.getElementsByTagName(参数：字符串（标签名）) ->获取所有相应的元素集 | 返回值：HTML Collation对象或null
+ById,ByClassName,ByName
+querySelector(字符串(<selectior>)) -> 使用css选择器返回相应元素，若存在多个返回第一个 | 返回值：HTMLElement对象
+querySelectorAll(字符串(<selectior>)) -> 返回匹配指定css选择器的所有元素 | HTMLCollcation对象
+
+
+
+4.属性
+document.URL ->当前文档的URL，赋值不能改变结果 | 返回值：当前文档的url
+
+document.cookie -> 获取当前文档的cookie信息 | 返回值：字符串（“name = value ; name1 = value1”）
+可以修改documen.cookie的属性，一次只能增加一对cookie信息，如果键存在，则更新值
+document.cookie = "name = value"
+
+document.location -> 获取location对象 | 返回值：Location对象
+
+document.readyState -> 返回当前html文档的状态 | 返回值：字符串(html文档状态)
+html文档加载时有三种状态：
+loading 浏览器正在加载和处理文档
+interactive 文档已被解析，但是浏览器还在加载其中链接的资源（图像和媒体等）
+complete 文档已被解析，所有的资源已加载完毕
+
+document.onreadystatechange -> 赋值使用，当文档状态改变时，执行赋给的函数 

@@ -1,0 +1,7 @@
+1.file只能通过浏览器打开文件框选择文件，不能通过赋值的给值
+
+2.获取file对象
+<input type="file" id="file">
+<script>
+var file = $('#file').files[0]
+</script>

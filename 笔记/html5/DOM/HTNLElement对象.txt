@@ -1,0 +1,8 @@
+1.语法
+obj.方法(参数)或属性
+
+2.属性
+获取CSSStyleDeclaration对象，如果直接赋值，会清空属性
+obj.css ->获取obj的CSSStyleDeclaration对象 | 返回值：obj的CSSStyleDeclaration对象
+
+obj.id -> 获取id值 | 返回值：字符串(对象的id值)

@@ -1,0 +1,24 @@
+1.layer.msg('info')
+弹出消息框
+
+2.弹出嵌入的页面
+layer.open({
+    title:'上传头像', 页面标题
+    area:['650px' , '600px'] 页面大小
+    type:2,
+    content:url嵌入另一个页面
+})
+
+3.弹出自定义页面
+var index = layer.open({
+    skin:"layui-layer-rim", 皮肤
+    title:'上传头像', 页面标题
+    area:['650px' , '600px'] 页面大小
+    type:1,
+    content:'<div class="text-center" style="margin-top:20px"><p>请输编辑栏目的名称</p><p><input type="text" value='+name+' id="rename"></p></div>'
+    btn:['确定','取消'], 设置按钮
+    yes:function（）一般为第一个按钮，成功执行function
+    btn2: function(index , layero){
+                layer.close(index)关闭弹窗
+            }第二个按钮执行的function
+})

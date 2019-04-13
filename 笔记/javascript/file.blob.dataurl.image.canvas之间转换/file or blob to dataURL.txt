@@ -1,0 +1,12 @@
+function readBlobAsDataURL(blob, callback) {
+    var a = new FileReader();
+    a.onload = function(e) {callback(e.target.result);};
+    a.readAsDataURL(blob);
+}
+Р§зг:
+readBlobAsDataURL(blob, function (dataurl){
+    console.log(dataurl);
+});
+readBlobAsDataURL(file, function (dataurl){
+    console.log(dataurl);
+});

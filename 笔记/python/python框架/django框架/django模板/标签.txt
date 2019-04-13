@@ -1,1 +1,2 @@
+1.include 插入html文件
 {% include 'xxx.html'%}插入html文件

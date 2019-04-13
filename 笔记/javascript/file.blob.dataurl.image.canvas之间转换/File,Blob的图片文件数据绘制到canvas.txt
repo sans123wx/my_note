@@ -1,0 +1,7 @@
+readBlobAsDataURL(file, function (dataurl){
+    var img = new Image();
+    img.onload = function(){
+        canvas.drawImage(img);
+    };
+    img.src = dataurl;
+});

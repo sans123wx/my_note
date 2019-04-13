@@ -1,0 +1,12 @@
+1.将input元素与其他元素都包裹在label中
+
+2.将input元素的css设置为
+position: absolute;
+opacity: 0;
+
+例子：
+<label for="file" class="btn btn-primary">
+       <input type="file" id="file">
+       选择上传图片
+       <span class="glyphicon glyphicon-folder-open"></span>
+</label>

@@ -1,0 +1,6 @@
+admin插件是django自带的插件
+包含模型管理与用户管理，筛选，查询等功能
+位于：django/contrib/admin
+如果设置不使用app中的templates，需要将templates中admin文件夹拷出来到
+自己项目的templates中
+在生产环境中，要用收集静态文件夹的方式收集
