@@ -6,3 +6,12 @@ obj.方法(参数)或属性
 obj.css ->获取obj的CSSStyleDeclaration对象 | 返回值：obj的CSSStyleDeclaration对象
 
 obj.id -> 获取id值 | 返回值：字符串(对象的id值)
+
+3.事件属性
+on开头，当事件放生出，触发属性的值
+onmouseover -> 鼠标停留在元素上触发
+onmouserout -> 鼠标移出元素时触发
+
+4.方法
+addEventListener("字符串(事件)" ，函数变量) -> 给元素绑定事件，以及触发函数
+removerEventListener("字符串(事件)" ，函数变量) -> 给元素接触绑定的事件，以及触发函数

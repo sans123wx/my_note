@@ -1,0 +1,7 @@
+属性：
+id
+background
+color
+
+方法：
+removePreoperty("字符串(css属性)") -> 删除对应的属性
