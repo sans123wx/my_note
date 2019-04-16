@@ -7,3 +7,9 @@ uwsgi不支持静态文件
 3.uwsgi --reload/stop master.pid文件的路径
 重启或者关闭uwsgi
 
+其他参考：
+nginx测试命令：nginx -t
+查看uwsgi进程：ps -aux | grep uwsgi
+正常关闭uwsgi进程：uwsgi --stop /home/mysite_uwsgi/master.pid
+强制关闭全部uwsgi进程：ps -aux | grep uwsgi |awk '{print $2}'|xargs kill -9
+重新加载uwsgi：uwsgi --reload /home/mysite_uwsgi/master.pid
