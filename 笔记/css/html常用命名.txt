@@ -1,0 +1,76 @@
+命名	意义	原型
+top	上	--
+bottom	下	--
+left	左	--
+right	右	--
+front	前	--
+back	后	--
+side	侧	--
+row	行	--
+col	列	column
+bar	条；如search-bar - 搜索条	--
+box	框、盒子；如login-box - 登录框	--
+block	块；跟盒子一样	--
+size	尺寸	--
+sm	小	small
+md	中	medium
+lg	大	large
+bold	粗	--
+light	细	--
+horizontal	水平的	--
+vertical	垂直的	--
+normal	正常的；常规的	--
+align	对齐	--
+parent	父级	--
+页面主结构
+命名	意义	原型
+header	页头，头	--
+nav	导航栏	navigation
+main	主要	--
+content	内容	--
+main-content	主要内容	--
+footer	页脚	--
+container	容器	--
+wrapper	同上	--
+页面辅助结构
+命名	意义	原型
+logo	商标，标志	--
+headline	头条，头版头	--
+sidebar	侧栏	--
+sidebar-left	左侧栏（其他方向以此类推）	--
+list	列表	--
+title	标题	--
+cat	分类	category
+icon	图标	--
+menu	菜单	--
+tab	标签页	--
+banner	条幅，标语	--
+slider, carousel	轮播	--
+btn	按钮	button
+msg	消息	message
+sub-...	子... 如：sub-menu - 子菜单	--
+...-item	单条... 如：nav-item - 单条导航（导航链接）	--
+电商站
+命名	意义	原型
+ad	广告	advertising
+promotion	促销	--
+hot	热卖	--
+new	新品	--
+product	产品	--
+price	价格	--
+summary	摘要	--
+publisher	厂商	--
+buy	购买	--
+pay	支付	--
+常用功能
+命名	意义	原型
+login	登录	--
+signup, reg	注册	regsiter, signup
+logout	登出	--
+search	搜索	--
+keyword	关键词	--
+input	输入	--
+output	输出	--
+scroll	滚动	--
+ranking	排行	--
+anno	公告	announcement
