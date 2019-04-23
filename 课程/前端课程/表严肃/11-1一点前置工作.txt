@@ -1,0 +1,39 @@
+常用样式设置：
+
+1.让内容居中，设置最大宽度
+.container {
+    display: block;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+2.清除浮动
+.clear-float:after,
+.clear-float:befort {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+3.列宽度 
+.col-1,
+...,
+.clo-9 {
+    display: block;
+    position: relative;
+    min-height: 1px;
+    float: left;
+}
+.col-1 {
+    width: 10%;
+}
+...
+.col-9 {
+    width: 90%;
+}
+
+4.宽度计算
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}

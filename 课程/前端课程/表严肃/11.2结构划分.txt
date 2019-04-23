@@ -1,0 +1,25 @@
+1.结构分析，根据需求，划分几个区域
+辅助方法：
+给所有元素添加一个带透明度的背景色，用于分清每一块占的大小
+* {
+    background: rgba(0,0,0,.1);
+}
+top-nav
+header
+main-promote
+cat-promote
+footer
+2.给区域添加内容
+top-nav 
+首页
+我的订单
+收藏夹
+登录
+注册
+header
+logo 2
+搜索栏 5
+购物测 3
+main-promote
+cat-promote
+footer
