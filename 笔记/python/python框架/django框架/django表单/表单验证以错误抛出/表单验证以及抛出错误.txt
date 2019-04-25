@@ -8,6 +8,9 @@ raise forms.ValidationError('错误信息'),则是表单错误，即在{{form.non_field_error
 3.执行clean_字段名():
 此方法可以单独验证某一个字段，需要自己定义，返回字段值，如果在此方法中使用
 raise forms.ValidationError('错误信息')，则是对应字段错误，即在{{field.errors.as_text}}中显示
+此方式在完成验证前，需要返回一个值，作为clean_data中此字段的值，否则后面的clean_字段名函数
+无法使用此字段在clean_data中的值，顺序为定义字段的顺序，此字段中raise forms.ValidationError
+后还是继续执行其他clean_字段名函数，raise并不会返回表单，需要自己建立context值，返回表单
 
 添加错误信息
 一般使用raise forms.ValidationError('错误信息')的方式来抛出错误信息

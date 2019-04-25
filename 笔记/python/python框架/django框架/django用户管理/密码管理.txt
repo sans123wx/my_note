@@ -1,0 +1,10 @@
+数据库中存放的密码为加密后的值，此值是不可逆的
+加密方法：
+from django.contrib.auth.hashers import make_password
+key_s = make_password('123456')
+每次生成的值不同
+
+验证密码：
+from django.contrib.auth.hashers import check_password
+check_password(key , key_s)返回一个布尔值
+True为密码正确，False为不正确 

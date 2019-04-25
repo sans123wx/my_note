@@ -1,0 +1,16 @@
+1.必须在app目录中建立templatetags包
+2.建立一个py文件，例如my_tags.py
+3.在页面中加载，{% load my_tags %}
+4.需要注册才能使用
+
+例子：
+from django import template
+register = template.Library()
+#注册
+@register.filter(name = 'my_tag')
+def my_tag(value ,arg):
+    value += arg
+    return value
+{{ somevalue | my_tag:'arg' }}
+value为|前的值，arg为冒号中的值
+return的值会替代原来的值
