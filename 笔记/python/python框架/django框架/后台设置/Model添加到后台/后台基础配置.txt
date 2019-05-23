@@ -1,3 +1,5 @@
+在admin中添加
+
 @adminregister(Model)
 class ModeAdmin(admin.ModelAdmin):
 	list_display 显示字段

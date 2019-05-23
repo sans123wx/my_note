@@ -1,0 +1,3 @@
+from django.contrib.auth.decorators import login_required
+在settings中设置login路径
+LOGIN_URL = ''
