@@ -1,0 +1,38 @@
+1.将项目放到wwwroot文件夹下，作为物理路径
+2.安装wfastcgi，pip install wfastcgi
+3.将wfastcgi放在项目文件夹里
+4.配置cgi
+处理程序映射 -》 添加模块映射
+请求路径：*
+模块：FastCgiModel
+可执行文件：python.exe文件路径|wfastcgi.py文件路径
+名称：DjangoHandler
+请求限制：不要打勾
+
+5.web.config配置文件
+<configuration>
+
+  <appSettings>
+    <!-- Required settings -->
+    <add key="WSGI_HANDLER" value="django.core.wsgi.get_wsgi_application()" />
+    <add key="PYTHONPATH" value="项目目录路径" />
+    <add key="DJANGO_SETTINGS_MODULE" value="项目目录.settings" />
+
+    <!-- Optional settings -->
+    <add key="WSGI_LOG" value="日志文件路径" />
+    <add key="WSGI_RESTART_FILE_REGEX" value=".*((\.py)|(\.config))$" />
+  </appSettings>
+</configuration>
+5.选择网站的应用池
+将标识改为localsystem，不行就回收，重启一下
+
+6.设置静态文件
+settings文件：STATIC_ROOT = os.paht.join(BASE_DIR , 'static_collected')
+收集静态文件：python manage.py collectstatic
+新建虚拟目录：
+别名：static
+物理路径：static_collected文件夹的路径
+在urls中
+from django.conf import settings
+from django.conf.urls.static import static
+static(settings.STATIC_URL , document_root = settings.STATIC_ROOT)
