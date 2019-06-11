@@ -1,0 +1,6 @@
+git的历史
+git的意思中文是饭桶
+git的作者是linux，与linux作者是一个人
+最早linuux用bitkeeper管理linux的各个版本，后来bitkeeper不让用了，linux就
+自己做了git
+git最早用于管理linux源代码
