@@ -1,0 +1,170 @@
+1.安装(必须有pillow)
+pip install django-simple-captcha
+2.配置
+将captcha添加到INSTALLED_APPS
+3.添加路由
+urlpatterns = [
+	path('captcha/' , include('captcha.urls'))
+]
+4.配置选项
+直接在settings.py中使用
+CAPTCHA_FONT_PATH 
+用于呈现文本的TrueType（TTF），OpenType或pilfont字体文件的完整路径和文件名。
+
+默认为:( fonts/Vera.ttf包含在应用程序中，GPL字体）。
+
+请注意，如果要使用这些字形（PIL的大多数现代发行版），您的PIL安装必须支持TTF和/或OpenFont。
+
+注意：从版本0.4.6开始，CAPTCHA_FONT_PATH可能是可迭代的字体路径，在这种情况下，将从列表中随机选取每个CAPTCHA的字体。
+
+CAPTCHA_FONT_SIZE 
+渲染文本的字体大小（以像素为单位）。
+
+默认为'22'。
+
+CAPTCHA_IMAGE_SIZE 
+生成的验证码的像素大小（以像素为单位），由2元组（宽度，高度）指定
+
+默认为无（自动计算）
+
+CAPTCHA_LETTER_ROTATION 
+此间隔中的随机旋转将应用于质询文本中的每个字母。
+
+默认为(-35,35)。
+
+版本0.1.6中的新功能：将此设置为无以禁用字母。
+
+CAPTCHA_BACKGROUND_COLOR 
+验证码的背景颜色。可以表示为html样式的#rrggbb，rgb（红色，绿色，蓝色）或常见的html名称（例如“红色”）。
+
+默认为： '#ffffff'
+
+CAPTCHA_FOREGROUND_COLOR 
+验证码的前景色。
+
+默认为 '#001100'
+
+CAPTCHA_CHALLENGE_FUNCT 
+表示用作挑战生成器的python可调用（即函数）的字符串。
+
+有关可用生成器的列表以及如何编写自己的生成器的指南，请参阅下面的生成器。
+
+默认为： 'captcha.helpers.random_char_challenge'
+
+CAPTCHA_MATH_CHALLENGE_OPERATOR 
+使用时math_challenge，可以选择乘法运算符。使用小写字母'x'表示交叉标记。
+
+默认为:( '*'星号）
+
+CAPTCHA_NOISE_FUNCTIONS 
+将PIL DrawImage对象和Image图像作为输入的python callables字符串列表，修改DrawImage，然后返回它。
+
+默认为： ('captcha.helpers.noise_arcs','captcha.helpers.noise_dots',)
+
+在调试问题时有用的零噪声辅助函数可用于'captcha.helpers.noise_null'。
+
+CAPTCHA_FILTER_FUNCTIONS 
+将PIL Image对象作为输入，修改并返回它的python callables字符串列表。
+
+这些在渲染之前被调用，即在噪声函数之后。
+
+默认为： ('captcha.helpers.post_smooth',)
+
+CAPTCHA_WORDS_DICTIONARY 
+word_challenge仅对挑战功能是必需的。指向包含单词列表的文件，每行一个。
+
+默认为： '/usr/share/dict/words'
+
+CAPTCHA_FLITE_PATH 
+flite可执行文件的完整路径。定义后，会自动将音频输出添加到验证码。
+
+默认为:( None无音频输出）
+
+CAPTCHA_SOX_PATH 
+sox可执行文件的完整路径。如果通过启用音频输出CAPTCHA_FLITE_PATH，则生成的输出音频文件在多代中是相同的（与每次渲染时获得不同随机噪声的CAPTCHA图像不同）。用户appleorange1已经表明，这可以用于预生成所有可能输入字符串的“彩虹表”和生成的输出声音文件的散列，从而使对音频CAPTCH的攻击变得微不足道。
+
+如果通过此设置安装和使用sox，则会将随机的棕色噪声注入生成的音频文件中，从而无法通过彩虹表呈现攻击。
+
+默认为:( None无音频输出）
+
+CAPTCHA_TIMEOUT 
+整数。生成的验证码的寿命，以分钟为单位。
+
+默认为：5
+
+CAPTCHA_LENGTH 
+设置生成的验证码的长度（以字符为单位）。（'captcha.helpers.random_char_challenge'挑战）
+
+默认为：4
+
+CAPTCHA_DICTIONARY_MIN_LENGTH 
+使用word_challenge挑战功能时，控制从词典文件中随机挑选的单词的最小长度。
+
+默认为：0
+
+CAPTCHA_DICTIONARY_MAX_LENGTH 
+使用word_challenge挑战函数时，控制从词典文件中随机挑选的单词的最大长度。
+
+默认为：99
+
+注意：指定例如是完全安全的，但定义为小于的错误被认为是错误。CAPTCHA_DICTIONARY_MIN_LENGTH = CAPTCHA_DICTIONARY_MAX_LENGTH = 6CAPTCHA_DICTIONARY_MAX_LENGTHCAPTCHA_DICTIONARY_MIN_LENGTH
+
+CAPTCHA_OUTPUT_FORMAT 
+版本0.1.6中的新功能
+
+当您想要相对于表单中的文本字段定位验证码图像时，为生成的标记指定您自己的输出格式。
+
+默认为： None
+
+（使用默认为：）u'%(image)s %(hidden_field)s %(text_field)s'
+
+警告
+
+不推荐使用此设置，而使用基于模板的窗口小部件呈现（请参阅下面的“渲染”部分）。
+
+CAPTCHA_TEST_MODE 
+版本0.3.6中的新功能
+
+设置为True时，字符串“PASSED”（任何情况）将被接受为对任何CAPTCHA的有效响应。用于测试目的。警告：请勿在生产中将此项设置为True。
+
+默认为：False
+
+CAPTCHA_GET_FROM_POOL 
+默认情况下，django-simple-captcha会在需要时生成新的验证码并将其存储在数据库中。这发生在HTTP GET请求中，可能不希望这样。此默认行为也可能与负载平衡基础结构冲突，其中有多个数据库用于从中读取数据。如果此设置为True，则当需要新的验证码时，将仅从先前保存在数据库中的验证码池中读取随机验证码。在这种情况下，必须定期运行自定义管理命令captcha_create_pool，其间隔时间略短于CAPTCHA_TIMEOUT。CAPTCHA_TIMEOUT的一个很好的价值每24小时向游泳池添加验证码，并将CAPTCHA_GET_FROM_POOL_TIMEOUT（见下文）设置为5分钟，可能是1446（24小时6分钟）。这意味着在最后一个验证码到期前6分钟，将创建新的验证码，并且不会使用其过期时间少于5分钟的验证码。在这种情况下，使用cronjob或类似的方法每24小时运行python manage.py captcha_create_pool。
+
+默认为：False
+
+CAPTCHA_GET_FROM_POOL_TIMEOUT 
+这是仅在CAPTCHA_GET_FROM_POOL（参见上文）为True时使用的超时值（以分钟为单位）。从池中随机拾取时，此设置将阻止获取比CAPTCHA_GET_FROM_POOL_TIMEOUT更早到期的验证码。
+
+默认为：5
+
+5.其他设置
+生成器和修饰符
+随机字符
+_images / random_chars.png
+经典验证码，可以选择四个随机字符。这不区分大小写。
+
+CAPTCHA_CHALLENGE_FUNCT = 'captcha.helpers.random_char_challenge'
+简单数学
+_images / math.png
+另一个经典之作是挑战用户通过随机选择1到9之间的两个数字来解决简单的数学挑战，以及随机运算符在正，负，次之间。
+
+CAPTCHA_CHALLENGE_FUNCT = 'captcha.helpers.math_challenge'
+字典单词
+_images / dict.png
+从字典文件中挑选一个随机单词。注意，您必须CAPTCHA_WORDS_DICTIONARY在配置中定义使用此生成器。
+
+CAPTCHA_CHALLENGE_FUNCT = 'captcha.helpers.word_challenge'
+滚动你自己
+要拥有自己的挑战生成器，只需指向CAPTCHA_CHALLENGE_FUNCT一个返回字符串元组的函数：第一个（挑战）将在验证码中呈现，第二个是对挑战的有效响应，例如，('5+10=', '15')('AAAA', 'aaaa')
+
+此示例生成器返回六个随机数字：
+
+import random
+
+def random_digit_challenge():
+    ret = u''
+    for i in range(6):
+        ret += str(random.randint(0,9))
+    return ret, ret

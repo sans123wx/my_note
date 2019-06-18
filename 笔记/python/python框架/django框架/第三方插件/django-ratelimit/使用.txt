@@ -1,0 +1,25 @@
+from ratelimit.decorators import ratelimit
+
+@ratelimit(key='ip')
+def myview(request):
+    # ...
+
+@ratelimit(key='ip', rate='100/h')
+def secondview(request):
+    # ...
+
+@ratelimit（group = None，key =，rate = None，method = ALL，block = False ）
+参数：	
+group - None要计算在一起的一组速率限制。默认为视图的虚线名称。
+key - 要使用的密钥，请参阅密钥。
+率 -
+'5 / m'允许的每单位时间的请求数。有效单位是：
+
+s - 秒
+m - 分钟
+h - 小时
+d - 天
+也接受callables。查看价格。
+
+method - ALL哪种HTTP方法可以限速。可以是一个字符串，字符串列表/元组，或为特殊值ALL或 UNSAFE（其中包括POST，PUT，DELETE和 PATCH）。
+block - False是否阻止请求而不是注释。

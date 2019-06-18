@@ -1,0 +1,24 @@
+1.安装
+pip install django-ratelimit
+2.配置
+在settings中直接使用
+RATELIMIT_CACHE_PREFIX
+ratelimit键的可选高速缓存前缀（除了PREFIX 在高速缓存后端定义的值之外）。默认为'rl:'。
+
+RATELIMIT_ENABLE
+设置为False禁用整个电路板的速率限制。默认为 True。
+
+在使用Django的override_settings()测试工具进行测试时可能很有用，例如：
+
+from django.test import override_settings
+
+with override_settings(RATELIMIT_ENABLE=False):
+    result = call_the_view()
+RATELIMIT_USE_CACHE
+CACHES要使用的缓存名称（来自dict）。默认为 'default'。
+
+RATELIMIT_VIEW
+当请求是速率限制时使用的视图的字符串导入路径RatelimitMiddleware，例如'myapp.views.ratelimited'，没有默认值 - 您必须将其设置为使用RatelimitMiddleware。
+
+RATELIMIT_FAIL_OPEN
+是否在缓存后端失败时允许请求。默认为False。
