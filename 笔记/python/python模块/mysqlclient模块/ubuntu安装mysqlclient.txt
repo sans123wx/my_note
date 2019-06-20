@@ -5,7 +5,8 @@ ubuntu
 安装libmysqlclient-dev
 官网下载apt源
 https://dev.mysql.com/downloads/mysql/
-选择版本，用wget下载
+选择版本，搜索libmysqlclient-dev用wget下载
+https://dev.mysql.com/get/Downloads/MySQL-8.0/libmysqlclient-dev_8.0.16-2ubuntu18.04_amd64.deb
 
 添加软件源
 dpkg -i 软件源 
