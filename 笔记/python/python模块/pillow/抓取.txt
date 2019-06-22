@@ -1,0 +1,6 @@
+from PIL import ImageGrab
+
+img = ImangeGrab.grab()
+返回一个image对象，抓全当前屏幕
+img.save('保存地址')保存图片
+接受一个4元素元组的参数，四个元素为整数，分别为左上角坐标和右下角坐标
