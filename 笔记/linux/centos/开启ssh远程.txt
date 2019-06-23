@@ -24,3 +24,8 @@ passwordauthentication yes
 ClientAliveInterval 60
 
 ClientAliveCountMax 60
+
+ubuntu下使用ssh
+ps -e|grep ssh
+显示中有sshd则表示开始
+没有则apt install openssh-server
