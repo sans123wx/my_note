@@ -1,0 +1,4 @@
+1·将nginx安装包中的contrib下的vim目录中的所有文件复制到
+root目录下的.vim目录下，如果没有.vim目录，自己创建一个
+
+2.cp -r contrib/vim/* ~/.vim/
