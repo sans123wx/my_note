@@ -1,0 +1,9 @@
+https如果不能访问，将verify设置为False
+错误提示：dh_key_too_small时，设置
+import requests
+requests.packages.urllib3.util.ssl_.DEFAULT_CIPHERS += 'HIGH:!DH:!aNULL'
+try:
+    requests.packages.urllib3.contrib.pyopenssl.DEFAULT_SSL_CIPHER_LIST += 'HIGH:!DH:!aNULL'
+except AttributeError:
+    pass
+
