@@ -1,4 +1,4 @@
-ssh-keygen -R [服务器ip address]
+ssh-keygen -R 服务器ip address
 得到结果：
 # Host ［IP address］ found: line **
 /Users/apple/.ssh/known_hosts updated.

@@ -2,3 +2,9 @@ FAQ：
 引导出错：
 由于软碟通安装时路径名搞错，所以将
 LABEL="路径" 一直到quiet前的内容改为/dev/挂载的盘，一般为/dev/sdb4
+
+vmlinuz initrd=initrd.imginst.stage2=hd:LABEL=RHEL-server-7.0-x86_64-LinuxProbe.Com.iso quiet
+
+改为(注意最后面的“quite”切勿删除):
+
+vmlinuz initrd=initrd.img inst.stage2=hd:/dev/sdb4 quite
