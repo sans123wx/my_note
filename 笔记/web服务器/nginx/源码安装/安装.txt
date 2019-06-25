@@ -1,12 +1,15 @@
 1../configure --prefix=安装路径
 遇到需要PCRE库
-apt-get install libpcre3 libpcre3-dev
+ubuntu:apt-get install libpcre3 libpcre3-dev
+centos:yum -y isntall pcre pcre-devel
 遇到需要zlib library
-apt install zlib1g-dev
+ubuntu:apt install zlib1g-dev
+centos:yum install -y zlib zlib-devel
 OpenSSL库
 如果服务器不只是要支持HTTP，还需要在更安全的SSL协议上传输HTTP，
 那么需要拥有OpenSSL。另外，如果我们想使用MD5、SHA1等散列函数，那么也需要安装它。可以这样安装：
-apt install openssl libssl-dev 
+ubuntu:apt install openssl libssl-dev 
+centos:yum install -y openssl openssl-devel
 
 
 问题：
