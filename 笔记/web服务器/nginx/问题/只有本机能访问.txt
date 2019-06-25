@@ -1,0 +1,31 @@
+原因：80端口被防火墙禁止
+
+1.进入在/etc/sysconfig/文件夹
+cd /etc/sysconfig/
+2.修改iptables文件
+增加一条
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT
+重启防火墙
+service iptables restart
+
+
+如果没有iptables文件：
+在centos7中没有iptables文件，因为默认没有安装iptables-services服务
+1.安装iptables-services
+yum install iptables-services
+
+2.启动iptables
+systemctl enable iptables
+这个时候，/etc/sysconfig目录下面就有了iptables文件了。
+
+3.打开iptables
+
+systemctl start iptables 
+
+4.编辑
+
+vim /etc/sysconfig/iptables
+
+5.重启防火墙
+
+service iptables restart
