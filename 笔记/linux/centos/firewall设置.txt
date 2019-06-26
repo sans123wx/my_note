@@ -1,0 +1,33 @@
+1.查看防火墙状态
+firewall-cmd --state
+
+2.开启防火墙
+systemctl start firewalld.service
+
+3.设置开机启动
+systemctl enable firewalld.service
+
+4.重启防火墙
+systemctl restart firewalld.service
+
+5.设置端口
+frewall-cmd --zone=public --add-port=80/tcp --permanent
+
+--zone #作用域
+--add-port=80/tcp #添加端口，格式为：端口/通讯协议
+--permanent
+
+6.查看端口
+firewall-cmd --list-ports
+
+7.跟新防火墙规则
+firewall-cmd --reload
+
+8.查看端口状态
+firewall-cmd --zone=public --query-port=80/tcp
+
+9.删除端口
+firewall-cmd --zone=public --remove-port=80/tcp --permanent
+
+10.查看所有开启的端口
+firewall-cmd --zone=public --list-ports

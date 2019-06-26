@@ -1,0 +1,8 @@
+1.查看所有开机启动设置项
+systemctl list-unit-files
+
+2.设置开机启动
+systemctl enable 服务
+
+3.关闭开机启动
+systemctl disable 服务
