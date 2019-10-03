@@ -1,0 +1,4 @@
+1.DOM转换为jquery对象
+$(DOM)
+2.jquery转换为DOM对象
+$('css选择器').get(0)

@@ -1,0 +1,8 @@
+on_delete=models.CASCADE,     # 删除关联数据,与之关联也删除
+on_delete=models.DO_NOTHING,  # 删除关联数据,什么也不做
+on_delete=models.PROTECT,     # 删除关联数据,引发错误ProtectedError
+on_delete=models.SET_NULL,    # 删除关联数据,与之关联的值设置为null（必须设置null=True）
+on_delete=models.SET_DEFAULT, # 删除关联数据,与之关联的值设置为默认值（必须设置default）
+on_delete=models.SET,         # 删除关联数据,
+ a. 与之关联的值设置为指定值,设置：models.SET(值)
+ b. 与之关联的值设置为可执行对象的返回值,设置：models.SET(可执行对象)
