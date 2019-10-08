@@ -1,0 +1,14 @@
+作用：
+自定义记录数据
+
+使用方法
+1.在元素中定义属性data-*，*必须是小写，自定义名称
+<button type="button" data-cmd="delete" data-id="1234">Delete</button>
+2.在dom中获取属性值
+var cmd = button.getAttribute('data-cmd');
+3.在dom中设置属性值
+button.setAttribute('data-cmd', yourNewCmd);
+4.在jquery中获取属性值
+使用attr或者data
+attr('data-cmd')
+data('cmd')
