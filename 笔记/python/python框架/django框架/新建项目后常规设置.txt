@@ -1,0 +1,19 @@
+1.html文件夹设置
+TEMPLATES = [
+	'DIRS':[os.path.join(BASE_DIR , 'templates')]
+]
+
+2.时区设置
+TIME_ZONE= 'Asia/Shanghai'
+
+3.静态文件夹设置
+STATICFILES_DIRS= (
+	os.path.join(BASE_DIR , 'static')
+)
+
+4.媒体文件夹设置
+MEDIA_URL = '/media'
+MEDIA_ROOT = os.path.join(BASE_DIR , 'media')
+
+5.语言
+LANGUAGE_CODE = 'zh-hans'
