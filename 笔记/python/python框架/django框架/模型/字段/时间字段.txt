@@ -1,0 +1,13 @@
+1.DateField
+日期类型
+两个重要参数：
+auto_now：对象被保存时设为当前日期，常用于最后修改日期
+auto_now_add：对象被创建时设为当前日期，常用于创建日期
+
+2.DateTimeField
+日期时间类型
+两个重要参数与DateField相同
+
+3.DurationField
+持续时间类型
+存储一定期间的时间长度，常用于时间之间的加减
