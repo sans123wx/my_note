@@ -1,0 +1,9 @@
+1.加载其他文件内容
+:r filename
+
+2.同时打开多个文件
+vim filename1 filename2
+
+:n 编辑下一个文件
+:N 编辑上一个文件
+:files 列出目前这个vim开启的所有文件
