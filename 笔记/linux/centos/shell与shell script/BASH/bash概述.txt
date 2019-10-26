@@ -1,0 +1,12 @@
+1.bash是shell的一种，一般linux都默认使用bash作为shell
+
+2.shell内置了很多命令
+
+3.区分命令是否为内置的命令
+type [-tpa] name
+-t  type将name以下面这些字眼显示出他的意义:
+     file：表示为外部命令
+     alias：该命令为命令别名所设置的名称
+     builtin：该命令为bash内置的功能
+-p：如果后面接的name为外部名称时，才会显示完整文件名
+-a：会由path变量定义的路径中，将所有含有name的命令都列出来，包含alias
