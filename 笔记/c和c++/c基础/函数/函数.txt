@@ -1,0 +1,7 @@
+申明:
+返回类型 函数名(<数据类型>变量名 , <数据类型>变量名 , ...){函数体}
+例：void sum(int begin , int end){
+	int r;
+	r = begin + end;
+	return r;
+}
