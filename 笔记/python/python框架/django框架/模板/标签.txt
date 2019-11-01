@@ -1,2 +1,4 @@
 1.include 插入html文件
 {% include 'xxx.html'%}插入html文件
+
+2.{% verbatim %}其中的内容使用纯文本

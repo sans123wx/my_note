@@ -1,0 +1,2 @@
+1.exists()
+queryset包含任何结构，返回Ture，否则为False
