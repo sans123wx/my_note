@@ -1,0 +1,5 @@
+locale -a：显示系统支持的所有语系
+local：显示当前语系设置
+如果设置了LANG与LC_ALL，那么其他语系变量都会被这两个变量代替
+默认语系在/etc/locale.conf里面
+在windows中默认编码为gbk，要在linux查看windows的文件，要改成gbk编码
