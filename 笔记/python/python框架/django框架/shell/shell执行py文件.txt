@@ -1,0 +1,2 @@
+在django的shell中执行py文件
+进入shell，执行exec(open('文件地址' , encoding = 'utf-8').read())
