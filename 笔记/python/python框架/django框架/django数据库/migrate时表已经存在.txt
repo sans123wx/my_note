@@ -1,0 +1,4 @@
+对所有app
+python manage.py --fake initial
+对部分app
+python manage.py --fake <appname>
