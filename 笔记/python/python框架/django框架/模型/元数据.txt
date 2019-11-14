@@ -1,0 +1,7 @@
+1.模型在admin中的名称
+verbose_name
+verbose_name_plural（复数形式）
+2.联合唯一
+unique_together = [['字段1','字段2']]
+或
+unique_together = ['字段1' , '字段2']
