@@ -1,0 +1,28 @@
+1.在结尾处插入一个元素或内容
+jQuery append() 
+方法在被选元素的结尾插入内容
+$("p").append("Some appended text.")
+
+2.在开头处插入一个元素或内容
+jQuery prepend()
+ 方法在被选元素的开头插入内容
+$("p").prepend("Some prepended text.")
+
+3.在元素后添加一个兄弟元素
+jQuery after() 
+$("img").after("Some text after")
+
+4.在元素前添加一个兄弟元素
+jQuery before()
+$("img").before("Some text before")
+
+添加多个元素
+例：
+function afterText()
+{
+var txt1="<b>I </b>";                    // 以 HTML 创建新元素
+var txt2=$("<i></i>").text("love ");     // 通过 jQuery 创建新元素
+var txt3=document.createElement("big");  // 通过 DOM 创建新元素
+txt3.innerHTML="jQuery!";
+$("img").after(txt1,txt2,txt3);          // 在 img 之后插入新元素
+}

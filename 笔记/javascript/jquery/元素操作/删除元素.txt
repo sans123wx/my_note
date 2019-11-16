@@ -1,0 +1,9 @@
+1.删除元素本身以及子元素
+jQuery.remove()
+可接受一个参数，删除指定的元素
+该参数可以是任何 jQuery 选择器的语法
+例：
+删除所有class='test'的p元素
+$('p').remove('.test')
+2.删除所有子元素
+jQuery.empty()

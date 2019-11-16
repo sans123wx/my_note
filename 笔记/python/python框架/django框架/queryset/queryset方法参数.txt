@@ -1,3 +1,6 @@
 1.exists()
 some_queryset.filter(pk=entry.pk).exists()
 queryset包含任何结构，返回Ture，否则为False
+
+2.update()
+批量更新，可以同时更新多个字段

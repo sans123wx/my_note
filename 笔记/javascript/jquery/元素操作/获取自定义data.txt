@@ -1,0 +1,4 @@
+1.jQuery.data('Ãû³Æ')
+<a data-id='he'>hello</a>
+
+$('a').data('id')
