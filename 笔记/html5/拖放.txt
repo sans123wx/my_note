@@ -1,0 +1,23 @@
+1.被拖动的元素
+设置属性draggable=true，才能对其进行拖动，默认是不能拖放的
+
+2.用于被拖动的元素的时间
+ondragstart  开始拖拽事件，鼠标点击移动后触发
+ondrag  拖拽过程事件，在移动过程中，不停触发，一直到松开鼠标
+ondragend  拖拽结束事件，鼠标释放时触发
+
+3.释放区域
+默认是不允许释放的，需要设置e.preventDefault()
+ondragenter  鼠标进入释放区域时触发
+ondragover   鼠标进入释放区域后，不停的触发，知道离开区域或释放鼠标
+ondragleave  鼠标离开释放区域后触发
+ondrop          鼠标在释放区域内释放后触发
+
+在触发ondragover时，在函数中使用e.preventDefault()，可以设置释放区域为可释放
+使用append或appendChild，将被拖放元素剪切到释放区域
+
+4.设置数据
+e.dataTransfer.setData('text','Hello World');
+如果使用的时jquery
+e.originalEvent.dataTransfer.setData('text',‘Hello World’);
+因为e是被jquery包装过，不是原生的
