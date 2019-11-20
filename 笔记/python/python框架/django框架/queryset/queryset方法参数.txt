@@ -7,3 +7,12 @@ queryset包含任何结构，返回Ture，否则为False
 
 3.get_or_create()
 如果获取不到，就创建返回一个元组(获取或新建的对象,布尔值)
+
+4.values_list()
+参数为字段的字符串形式，flat=True时，只返回值
+
+5.distinct()
+去除重复值
+
+6.aggregate()
+利用聚合函数计算，返回一个字典
